@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Wealth Noir tokens */
+  --color-primary: #E9E3D4;
+  --color-secondary: #8C8575;
+  --color-tertiary: #C9A15A;
+  --color-neutral: #0A0A09;
+  --color-surface: #131211;
+  --color-on-primary: #0A0A09;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-neutral);
+  color: var(--color-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* All headings are gold */
+h1, h2, h3, h4 {
+  color: var(--color-tertiary) !important;
+}
+
+/* Gold CTA buttons always carry dark text */
+.bg-tertiary,
+.hover\:bg-\[\#b8903f\]:hover {
+  color: #0A0A09 !important;
+}
+
+/* Focus ring using tertiary */
+*:focus-visible {
+  outline: 1px solid var(--color-tertiary);
+  outline-offset: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(201, 161, 90, 0.25);
+  color: var(--color-primary);
+}
+
+/* Reduce motion support handled via JS/Framer variants */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
