@@ -49,14 +49,20 @@ export function FounderPreview() {
           </p>
           <h2
             id="founder-heading"
-            className="font-display text-h1 font-medium"
+            className="font-display text-h2 font-medium"
           >
             Melvin, Identity Architect &amp; Creator of The Sovereign Identity Ecosystem™
           </h2>
-          <p className="font-body text-body text-secondary max-w-prose">
-            I help people return to who they were always meant to be,
-            through clarity, structure, and sovereignty.
-          </p>
+          <div className="space-y-4 max-w-prose">
+            <p className="font-body text-body text-secondary">
+              I help people return to who they were always meant to be.<br />
+              Through clarity, structure, and sovereignty, I guide individuals back to their original identity: the one beneath drift, noise, and expectation.
+            </p>
+            <p className="font-body text-body text-secondary">
+              Identity is not something you create.<br />
+              Identity is something you return to.
+            </p>
+          </div>
           <ButtonGhost href="/about">Read the Full About Page</ButtonGhost>
         </motion.div>
 
@@ -70,7 +76,7 @@ export function FounderPreview() {
         >
           <Image
             src="/profile.png"
-            alt="Melvin Nibbs — Identity Architect and founder of The Sovereign Identity Institution"
+            alt="Melvin Nibbs, Identity Architect and founder of The Sovereign Identity Institution"
             fill
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 50vw"

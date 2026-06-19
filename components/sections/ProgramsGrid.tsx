@@ -16,7 +16,7 @@ const programs = [
     id: "return",
     tag: "Threshold",
     name: "The Return™",
-    description: "End drift. Restore identity. Re-enter sovereignty.",
+    description: "End drift. Restore identity. Re-enter sovereignty.\nThis is where everything begins.",
     cta: "Begin The Return™",
     href: "/the-return",
     primary: true,
@@ -25,7 +25,7 @@ const programs = [
     id: "purpose",
     tag: "Orientation",
     name: "The Purpose Method™",
-    description: "Find direction. Clarify mission. Orient your life.",
+    description: "Purpose is not discovered. Purpose is remembered.\nThis program helps you orient your life around identity and mission.",
     cta: "Start The Purpose Method™",
     href: "/the-purpose-method",
     primary: false,
@@ -34,7 +34,7 @@ const programs = [
     id: "trilogy",
     tag: "Journey",
     name: "The Trilogy™",
-    description: "12 months of Alignment, Embodiment, and Legacy.",
+    description: "12 months. Three arcs. One identity.\nAlignment → Embodiment → Legacy.",
     cta: "Enter The Trilogy™",
     href: "/the-trilogy",
     primary: false,
@@ -43,7 +43,7 @@ const programs = [
     id: "circle",
     tag: "Continuation",
     name: "The Sovereign Identity Circle™",
-    description: "Long-term identity evolution and refinement.",
+    description: "Identity is not a moment. Identity is a practice.\nThis is long-term identity evolution.",
     cta: "Join The Circle™",
     href: "/the-circle",
     primary: false,
@@ -73,10 +73,13 @@ export function ProgramsGrid() {
           </p>
           <h2
             id="programs-heading"
-            className="font-display text-h1 font-medium text-primary"
+            className="font-display text-h1 font-medium text-primary mb-4"
           >
-            The complete identity ecosystem.
+            The Sovereign Identity Ecosystem™ is built on four programs.
           </h2>
+          <p className="font-body text-body text-secondary max-w-prose">
+            Each one aligned with a specific stage of identity transformation.
+          </p>
         </motion.div>
 
         <motion.div
@@ -96,7 +99,7 @@ export function ProgramsGrid() {
                   <h3 className="font-display text-[1.4rem] font-medium text-primary leading-tight">
                     {program.name}
                   </h3>
-                  <p className="font-body text-body text-secondary">
+                  <p className="font-body text-body text-secondary whitespace-pre-line">
                     {program.description}
                   </p>
                 </div>

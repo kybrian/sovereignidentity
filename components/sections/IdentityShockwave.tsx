@@ -32,16 +32,31 @@ export function IdentityShockwave() {
             <br />
             Everything else is downstream.
           </h2>
-          <div className="space-y-4 max-w-prose mx-auto">
-            <p className="font-body text-body text-secondary">
-              Most people try to change their mindset.
-              <br />
-              You change the source.
+          <div className="space-y-6 max-w-prose mx-auto text-left">
+            <p className="font-body text-body text-secondary text-center">
+              When identity is unclear, everything becomes unstable:
             </p>
-            <p className="font-body text-body text-secondary">
-              This is not mindset work.
+            <ul className="font-body text-body text-secondary list-disc list-inside mx-auto w-fit space-y-1">
+              <li>Purpose feels distant</li>
+              <li>Direction feels foggy</li>
+              <li>Emotions feel louder</li>
+              <li>Decisions feel heavier</li>
+              <li>Life feels reactive</li>
+            </ul>
+            <p className="font-body text-body text-secondary text-center mt-6">
+              When identity becomes clear, everything stabilizes:
+            </p>
+            <ul className="font-body text-body text-secondary list-disc list-inside mx-auto w-fit space-y-1">
+              <li>Purpose aligns</li>
+              <li>Direction sharpens</li>
+              <li>Emotions settle</li>
+              <li>Decisions simplify</li>
+              <li>Life becomes sovereign</li>
+            </ul>
+            <p className="font-body text-body text-secondary text-center mt-6">
+              Identity is not a mindset.
               <br />
-              This is identity work: upstream, structural, sovereign.
+              Identity is the source.
             </p>
           </div>
           <div className="pt-2">

@@ -4,39 +4,29 @@ import { motion, useReducedMotion } from "framer-motion";
 import { heroMarkVariants, scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
 import { Divider } from "@/components/ui/Divider";
+import { Card } from "@/components/ui/Card";
 
-const worldTeaches = ["To search for it.", "To hunt for it.", "To wait for it.", "To hope for it.", "To \"figure it out.\""];
-
-const fourThresholds = [
+const thresholds = [
   {
     n: "1",
-    title: "Identity → Purpose Mapping",
-    body: "You will see how your identity naturally points toward a specific direction. Not a job. Not a role. Not a title. A direction.",
+    name: "Identity: Who you are",
+    body: "Purpose begins with identity.\nWithout identity, purpose becomes guesswork.",
   },
   {
     n: "2",
-    title: "Purpose → Direction Alignment",
-    body: "You will align your internal identity with an external path. This is where confusion dissolves. This is where clarity emerges.",
+    name: "Mission: What you're here to do",
+    body: "Mission is identity expressed through action.",
   },
   {
     n: "3",
-    title: "Direction → Mission Clarity",
-    body: "You will articulate the mission your identity has been carrying for years: the mission you've felt but couldn't name.",
+    name: "Direction: Where you're going",
+    body: "Direction is the path identity takes.",
   },
   {
     n: "4",
-    title: "Mission → Action Structure",
-    body: "You will build the structure that turns mission into movement: clear, grounded, sovereign action.",
+    name: "Orientation: How you move",
+    body: "Orientation is the structure that keeps you aligned.",
   },
-];
-
-const forYouIf = [
-  "You feel directionless",
-  "You feel stuck",
-  "You feel unclear about your mission",
-  "You feel the pull to do more but don't know where to begin",
-  "You feel the ache of unexpressed identity",
-  "You feel ready to move, but not sure where",
 ];
 
 export function ThePurposeMethodPage() {
@@ -53,138 +43,134 @@ export function ThePurposeMethodPage() {
             The Purpose Method™
           </h1>
           <div className="w-10 h-px bg-secondary/20 mx-auto" />
-          <div className="space-y-3 font-body text-body text-secondary max-w-prose mx-auto">
-            <p className="font-display text-[1.2rem] font-medium text-primary">Purpose is not found.<br />Purpose is remembered.</p>
-            <p>Purpose is not something you chase.<br />It is not something you discover in a moment of inspiration.<br />It is not something you stumble into by accident.</p>
-            <p>Purpose is the direction your identity has been pointing toward all along: quietly, consistently, faithfully.</p>
-            <p>You don't find purpose.<br />You return to it.</p>
-          </div>
         </motion.div>
-        {/* TODO: imagery pending from client — golden compass floating in darkness */}
       </section>
 
-      {/* Orientation section */}
-      <section aria-labelledby="pm-orientation-heading" className="bg-surface py-24 md:py-48 px-6 md:px-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-6">
-            <h2 id="pm-orientation-heading" className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is an Orientation</h2>
-            <div className="space-y-3 font-body text-body text-secondary">
-              <p>Not a course.<br />Not a workshop.<br />Not a motivational experience.</p>
-              <p>It is an <span className="text-primary font-medium">orientation</span>: the moment your identity points toward your mission.</p>
-              <p>Purpose is not emotional.<br />Purpose is not inspirational.<br />Purpose is not a feeling.</p>
-              <p>Purpose is structural.<br />Purpose is directional.<br />Purpose is identity expressed as movement.</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-6">
-            <h2 className="font-display text-h1 font-medium text-primary">The World Teaches You to Chase Purpose</h2>
-            <ul className="space-y-2 font-body text-body text-secondary">
-              {worldTeaches.map((item) => (<li key={item} className="flex items-start gap-3"><span className="text-secondary/40 flex-shrink-0">•</span><span>{item}</span></li>))}
-            </ul>
-            <div className="space-y-3 font-body text-body text-secondary">
-              <p>But purpose is not external.<br />Purpose is internal.</p>
-              <p>Purpose is not discovered.<br />Purpose is revealed.</p>
-              <p>Purpose emerges when identity is restored: when the noise clears, when the drift ends, when you return to yourself.</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Built for one reason */}
-      <section aria-labelledby="pm-reason-heading" className="bg-neutral py-24 md:py-48 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" gold />
+      {/* SECTION 1 --- ORIENTATION */}
+      <section aria-label="Orientation" className="bg-surface py-24 md:py-36 px-6 md:px-16">
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="pm-reason-heading" className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is Built for One Reason</h2>
-          <p className="font-body text-body text-primary font-medium">To give you direction.</p>
-          <div className="space-y-3 font-body text-body text-secondary">
-            <p>To take the identity you reclaimed in The Return™ and point it toward the life you were meant to live.</p>
-            <p>This is where clarity becomes movement.<br />This is where identity becomes mission.<br />This is where your life begins to aim.</p>
+          <h2 className="font-display text-h1 font-medium text-primary">Orientation</h2>
+          <div className="space-y-4 font-body text-body text-secondary">
+            <p>
+              Purpose is not discovered.<br />
+              Purpose is remembered.
+            </p>
+            <p>
+              The Purpose Method™ helps you orient your life around identity, mission, and direction, not emotion or confusion.
+            </p>
+            <p>
+              Most people search for purpose externally.<br />
+              But purpose is internal.<br />
+              Purpose is identity expressed.
+            </p>
           </div>
         </motion.div>
       </section>
 
-      {/* Four thresholds */}
-      <section aria-labelledby="pm-thresholds-heading" className="bg-surface py-24 md:py-48 px-6 md:px-16">
+      {/* SECTION 2 --- PURPOSE AS MEMORY */}
+      <section aria-labelledby="memory-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
+        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
+        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
+          <h2 id="memory-heading" className="font-display text-h1 font-medium text-primary">Purpose as Memory</h2>
+          <div className="space-y-4 font-body text-body text-secondary">
+            <p>Purpose is not:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>A brainstorm</li>
+              <li>A guess</li>
+              <li>A personality test</li>
+              <li>A passion exercise</li>
+              <li>A motivational idea</li>
+            </ul>
+            <p>Purpose is the memory of who you are.</p>
+            <p>When identity becomes clear, purpose becomes obvious.</p>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* SECTION 3 --- THE FOUR THRESHOLDS OF PURPOSE */}
+      <section aria-labelledby="four-thresholds-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16">
         <div className="max-w-4xl mx-auto">
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-12 space-y-4">
-            <h2 id="pm-thresholds-heading" className="font-display text-h1 font-medium text-primary">What You Will Experience</h2>
-            <p className="font-body text-body text-secondary">Inside The Purpose Method™, you will move through four directional thresholds:</p>
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-12 md:mb-16 space-y-4">
+            <h2 id="four-thresholds-heading" className="font-display text-h1 font-medium text-primary">The Four Thresholds of Purpose</h2>
           </motion.div>
-          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-4">
-            {fourThresholds.map((threshold) => (
-              <motion.div key={threshold.n} variants={staggerChildVariants} className="flex items-start gap-6 py-6 border-b border-secondary/10 last:border-b-0">
-                <div className="flex-shrink-0 w-11 h-11 flex items-center justify-center bg-neutral border border-secondary/30 rounded-sm">
-                  <span className="font-body text-label text-secondary">{threshold.n}</span>
-                </div>
-                <div className="space-y-2">
-                  <p className="font-display text-[1.15rem] font-medium text-primary">{threshold.title}</p>
-                  <p className="font-body text-body text-secondary">{threshold.body}</p>
-                </div>
+
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {thresholds.map((t) => (
+              <motion.div key={t.n} variants={staggerChildVariants}>
+                <Card className="h-full p-8 space-y-4">
+                  <div className="flex items-start gap-4">
+                    <span className="font-body text-label text-secondary uppercase tracking-[0.16em]">{t.n}.</span>
+                    <h3 className="font-display text-[1.3rem] font-medium text-primary">{t.name}</h3>
+                  </div>
+                  <div className="font-body text-body text-secondary space-y-1">
+                    {t.body.split("\n").map((line, i) => (
+                      <p key={i}>{line}</p>
+                    ))}
+                  </div>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mt-12 text-center">
+            <p className="font-body text-body text-secondary">These four thresholds create a stable internal compass.</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Not fast */}
-      <section aria-label="Not fast" className="bg-neutral py-24 md:py-48 px-6 md:px-16">
+      {/* SECTION 4 --- WHAT YOU EXPERIENCE */}
+      <section aria-label="What You Experience" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is Not Fast</h2>
-          <div className="space-y-3 font-body text-body text-secondary">
-            <p>It is not a burst of inspiration.<br />It is not a motivational high.<br />It is not a quick answer.</p>
-            <p>It is slow.<br />It is intentional.<br />It is precise.</p>
-            <p>Purpose is not a spark.<br />Purpose is a direction.</p>
+          <h2 className="font-display text-h1 font-medium text-primary">What You Experience</h2>
+          <div className="space-y-4 font-body text-body text-secondary">
+            <p>Inside The Purpose Method™, you experience:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Clarity</li>
+              <li>Direction</li>
+              <li>Confidence</li>
+              <li>Alignment</li>
+              <li>A sense of internal order</li>
+              <li>Relief from confusion</li>
+              <li>A renewed sense of mission</li>
+            </ul>
+            <p className="pt-2">Purpose becomes simple when identity is clear.</p>
           </div>
         </motion.div>
       </section>
 
-      {/* Who it's for */}
-      <section aria-labelledby="pm-who-heading" className="bg-surface py-24 md:py-48 px-6 md:px-16">
+      {/* SECTION 5 --- WHO THIS IS FOR */}
+      <section aria-labelledby="who-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16">
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="pm-who-heading" className="font-display text-h1 font-medium text-primary">Who The Purpose Method™ Is For</h2>
-          <p className="font-body text-body text-secondary">This is for you if:</p>
-          <ul className="space-y-2 font-body text-body text-secondary">
-            {forYouIf.map((item) => (<li key={item} className="flex items-start gap-3"><span className="text-secondary/40 flex-shrink-0">•</span><span>{item}</span></li>))}
+          <h2 id="who-heading" className="font-display text-h1 font-medium text-primary">Who This Is For</h2>
+          <p className="font-body text-body text-secondary">The Purpose Method™ is for people who:</p>
+          <ul className="space-y-3 font-body text-body text-secondary">
+            {[
+              "Feel directionless",
+              "Want clarity",
+              "Want alignment",
+              "Want to know what to do next",
+              "Want to live with intention",
+              "Want to move with confidence",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <span className="text-secondary mt-1 flex-shrink-0">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
           </ul>
-          <p className="font-body text-body text-primary font-medium">If you feel this tension, you are ready.</p>
+          <p className="font-body text-body text-secondary pt-2">If you want to live with direction, this is your orientation.</p>
         </motion.div>
       </section>
 
-      {/* Compass + Promise CTA */}
-      <section aria-label="The compass and the promise" className="bg-neutral py-24 md:py-48 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" gold />
-        <div className="max-w-4xl mx-auto space-y-16">
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-5">
-            <h2 className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is the Compass</h2>
-            <div className="space-y-3 font-body text-body text-secondary">
-              <p>The Return™ brings you home.<br />The Purpose Method™ points you forward.</p>
-              <p>This is where your life begins to aim: with clarity, with direction, with identity.</p>
-            </div>
-          </motion.div>
-
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-5">
-            <h2 className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is a Promise</h2>
-            <div className="space-y-2 font-body text-body text-secondary">
-              <p>A promise that you will not wander.<br />A promise that you will not guess.<br />A promise that you will not drift again.<br />A promise that your life will move with clarity.</p>
-            </div>
-            <p className="font-body text-body text-secondary/70">Purpose is not a mystery.<br />Purpose is a memory.</p>
-            <p className="font-body text-body text-secondary">And you are ready to remember.</p>
-          </motion.div>
-
-          {/* TODO: imagery pending from client — golden compass rotating slowly */}
-
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-6">
-            <h2 className="font-display text-h1 font-medium text-primary">The Purpose Method™ Is Waiting for You</h2>
-            <div className="space-y-3 font-body text-body text-secondary">
-              <p>If you feel the pull,<br />if you feel the tension,<br />if you feel the quiet ache of direction unclaimed:</p>
-              <p>Then you already know.</p>
-              <p className="text-primary font-medium">It's time to orient your life.</p>
-            </div>
-            <ButtonPrimary href="/start-here">Start The Purpose Method™</ButtonPrimary>
-          </motion.div>
-        </div>
-        {/* TODO: imagery pending from client — cinematic faceless silhouette before golden directional beam */}
+      {/* SECTION 6 --- CTA */}
+      <section aria-label="Call to Action" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
+        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
+        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
+          <div className="pt-4">
+            <ButtonPrimary href="#start">Start The Purpose Method™</ButtonPrimary>
+          </div>
+        </motion.div>
       </section>
     </>
   );

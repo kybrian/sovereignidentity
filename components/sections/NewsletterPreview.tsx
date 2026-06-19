@@ -30,14 +30,19 @@ export function NewsletterPreview() {
           >
             The Sovereignty Digest™
           </h2>
-          <p className="font-body text-body text-secondary max-w-prose mx-auto">
-            A weekly identity letter for people who want to live with clarity.
-          </p>
-          <div className="space-y-1">
-            <p className="font-body text-body text-secondary/70">One letter.</p>
-            <p className="font-body text-body text-secondary/70">Once a week.</p>
-            <p className="font-body text-body text-secondary/70">
+          <div className="space-y-4 max-w-prose mx-auto">
+            <p className="font-body text-body text-secondary">
+              A weekly identity letter for people who want clarity.
+            </p>
+            <p className="font-body text-body text-secondary">
+              One letter.<br />
+              Once a week.<br />
               Straight to your inbox.
+            </p>
+            <p className="font-body text-body text-secondary">
+              No noise.<br />
+              No overwhelm.<br />
+              Just identity.
             </p>
           </div>
           <div className="pt-4">

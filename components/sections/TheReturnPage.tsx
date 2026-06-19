@@ -15,22 +15,22 @@ const thresholds = [
   {
     n: "1",
     name: "Recognition",
-    body: "The moment you see the drift.\nThe moment you tell the truth.\nThe moment you stop pretending.",
+    body: "Seeing the drift.\nNaming the misalignment.\nAcknowledging the gap.",
   },
   {
     n: "2",
-    name: "Recall",
-    body: "The moment you remember who you were before the drift.\nBefore the noise.\nBefore the expectations.\nBefore the world reshaped you.",
+    name: "Return",
+    body: "Coming back to the source.\nReconnecting with identity.\nReclaiming clarity.",
   },
   {
     n: "3",
-    name: "Reconstruction",
-    body: "The rebuilding of your internal foundation.\nThe restoration of your identity structure.\nThe stabilization of your nervous system.\nThe return of internal clarity.",
+    name: "Reclaiming",
+    body: "Taking back what was lost.\nRestoring internal authority.\nRebuilding from identity.",
   },
   {
     n: "4",
-    name: "Re‑Entry",
-    body: "The moment you step back into sovereignty.\nThe moment you reclaim your internal authority.\nThe moment you return to yourself.",
+    name: "Re‑entering Sovereignty",
+    body: "Standing in who you are.\nMoving with clarity.\nLiving with structure.",
   },
 ];
 
@@ -64,10 +64,10 @@ export function TheReturnPage() {
         </motion.div>
       </section>
 
-      {/* Opening */}
+      {/* SECTION 1 --- THE THRESHOLD */}
       <section
-        aria-label="There comes a moment"
-        className="bg-surface py-24 md:py-48 px-6 md:px-16"
+        aria-label="The Threshold"
+        className="bg-surface py-24 md:py-36 px-6 md:px-16"
       >
         <motion.div
           variants={scrollRevealVariants}
@@ -77,59 +77,34 @@ export function TheReturnPage() {
           className="max-w-prose mx-auto space-y-6"
         >
           <h2 className="font-display text-h1 font-medium text-primary">
-            There comes a moment
+            The Threshold
           </h2>
           <div className="space-y-4 font-body text-body text-secondary">
-            <p>A moment when you realize you've drifted.</p>
             <p>
-              Not because you failed.
-              <br />
-              Not because you were weak.
-              <br />
-              Not because you lacked discipline.
+              The Return™ is the moment you stop living from reaction and begin living from identity.
             </p>
-            <p>
-              But because the world pulled you away from yourself,
-              <br />
-              quietly, slowly, subtly.
-            </p>
-            <p>
-              Through expectations.
-              <br />
-              Through survival.
-              <br />
-              Through pressure.
-              <br />
-              Through noise.
-            </p>
-            <p>
-              One compromise at a time.
-              <br />
-              One distraction at a time.
-              <br />
-              One unspoken surrender at a time.
-            </p>
-            <p>Until one day, you look at your life and whisper:</p>
-            <p className="font-display text-[1.4rem] font-medium text-primary not-italic">
-              "This isn't me."
-            </p>
-            <p>
-              That whisper is the beginning.
-              <br />
-              That whisper is the doorway.
-              <br />
-              That whisper is the Return.
-            </p>
+            <p>It is the threshold between:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Who you became</li>
+              <li>And who you were always meant to be</li>
+            </ul>
+            <p>Most people don't realize they've drifted.<br />They just feel:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Misaligned</li>
+              <li>Disconnected</li>
+              <li>Unclear</li>
+              <li>Unmotivated</li>
+              <li>Out of rhythm</li>
+            </ul>
+            <p className="pt-2">The Return™ is where clarity begins.</p>
           </div>
         </motion.div>
-
-        {/* TODO: imagery pending from client — faceless silhouette before golden threshold */}
       </section>
 
-      {/* Threshold definition */}
+      {/* SECTION 2 --- WHY DRIFT HAPPENS */}
       <section
-        aria-labelledby="threshold-heading"
-        className="bg-neutral py-24 md:py-48 px-6 md:px-16"
+        aria-labelledby="drift-heading"
+        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
       >
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div
@@ -139,126 +114,36 @@ export function TheReturnPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto space-y-6"
         >
-          <h2 id="threshold-heading" className="font-display text-h1 font-medium text-primary">
-            The Return™ Is a Threshold
+          <h2 id="drift-heading" className="font-display text-h1 font-medium text-primary">
+            Why Drift Happens
           </h2>
           <div className="space-y-4 font-body text-body text-secondary">
             <p>
-              Not a program.
-              <br />
-              Not a course.
-              <br />
-              Not a challenge.
-              <br />
-              Not a mindset reset.
+              Drift is not failure.<br />
+              Drift is forgetting.
             </p>
+            <p>It happens slowly:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Expectations pull you</li>
+              <li>Responsibilities shape you</li>
+              <li>Survival pressures mold you</li>
+              <li>Roles define you</li>
+              <li>Momentum carries you</li>
+            </ul>
             <p>
-              It is a <span className="text-primary font-medium">threshold</span>:
-              <br />
-              the moment you step back into who you were always meant to be.
+              Identity becomes blurred.<br />
+              Direction becomes foggy.<br />
+              Life becomes reactive.
             </p>
-            <p>
-              The Return™ is the end of drift.
-              <br />
-              The Return™ is the restoration of identity.
-              <br />
-              The Return™ is the re‑entry into sovereignty.
-            </p>
-            <p>This is where your life begins again.</p>
+            <p>The Return™ brings you back to the source.</p>
           </div>
         </motion.div>
       </section>
 
-      {/* World teaches you */}
-      <section
-        aria-label="The world teaches you to push harder"
-        className="bg-surface py-24 md:py-48 px-6 md:px-16"
-      >
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 className="font-display text-h1 font-medium text-primary">
-            The World Teaches You to Push Harder
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>
-              To grind.
-              <br />
-              To hustle.
-              <br />
-              To motivate yourself.
-              <br />
-              To "fix your mindset."
-            </p>
-            <p>
-              But you don't need motivation.
-              <br />
-              You don't need hype.
-              <br />
-              You don't need to force yourself into a new version of you.
-            </p>
-            <p>You need a return.</p>
-            <p>
-              A return to clarity.
-              <br />
-              A return to identity.
-              <br />
-              A return to internal authority.
-              <br />
-              A return to the truth of who you are.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Built for one purpose */}
-      <section
-        aria-labelledby="return-identity-work"
-        id="identity-work"
-        className="bg-neutral py-24 md:py-48 px-6 md:px-16"
-      >
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" gold />
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 id="return-identity-work" className="font-display text-h1 font-medium text-primary">
-            The Return™ Is Built for One Purpose
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>To bring you back to yourself.</p>
-            <p>
-              To rebuild the internal structure that drift eroded.
-              <br />
-              To restore the identity you abandoned to survive.
-              <br />
-              To reconnect you with the clarity you lost along the way.
-            </p>
-            <p>
-              This is not emotional work.
-              <br />
-              This is not mindset work.
-              <br />
-              This is not motivational work.
-            </p>
-            <p className="text-primary font-medium">
-              This is identity work: upstream, structural, sovereign.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Four thresholds */}
+      {/* SECTION 3 --- THE FOUR THRESHOLDS */}
       <section
         aria-labelledby="four-thresholds-heading"
-        className="bg-surface py-24 md:py-48 px-6 md:px-16"
+        className="bg-surface py-24 md:py-36 px-6 md:px-16"
       >
         <div className="max-w-4xl mx-auto">
           <motion.div
@@ -269,10 +154,10 @@ export function TheReturnPage() {
             className="mb-12 md:mb-16 space-y-4"
           >
             <h2 id="four-thresholds-heading" className="font-display text-h1 font-medium text-primary">
-              What You Will Experience
+              The Four Thresholds
             </h2>
             <p className="font-body text-body text-secondary">
-              Inside The Return™, you will move through four identity thresholds:
+              Every identity restoration begins with four shifts:
             </p>
           </motion.div>
 
@@ -303,13 +188,25 @@ export function TheReturnPage() {
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.div
+            variants={scrollRevealVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <p className="font-body text-body text-secondary">
+              These four thresholds form the backbone of The Return™.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Not fast */}
+      {/* SECTION 4 --- WHAT YOU EXPERIENCE */}
       <section
-        aria-label="The Return is not fast"
-        className="bg-neutral py-24 md:py-48 px-6 md:px-16"
+        aria-label="What You Experience"
+        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
       >
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div
@@ -320,34 +217,31 @@ export function TheReturnPage() {
           className="max-w-prose mx-auto space-y-6"
         >
           <h2 className="font-display text-h1 font-medium text-primary">
-            The Return™ Is Not Fast
+            What You Experience
           </h2>
           <div className="space-y-4 font-body text-body text-secondary">
-            <p>
-              It is not a dopamine hit.
-              <br />
-              It is not a quick fix.
-              <br />
-              It is not a motivational spike.
+            <p>Inside The Return™, you experience:</p>
+            <ul className="list-disc list-inside space-y-1">
+              <li>Identity grounding</li>
+              <li>Emotional neutrality</li>
+              <li>Structural clarity</li>
+              <li>Directional awareness</li>
+              <li>A sense of coming home</li>
+              <li>Relief from internal noise</li>
+              <li>A renewed sense of self</li>
+            </ul>
+            <p className="pt-2">
+              This is not mindset work.<br />
+              This is identity restoration.
             </p>
-            <p>
-              It is slow.
-              <br />
-              It is intentional.
-              <br />
-              It is grounded.
-              <br />
-              It is sovereign.
-            </p>
-            <p>It is the work that changes everything.</p>
           </div>
         </motion.div>
       </section>
 
-      {/* Who it's for */}
+      {/* SECTION 5 --- WHO THIS IS FOR */}
       <section
         aria-labelledby="return-who-heading"
-        className="bg-surface py-24 md:py-48 px-6 md:px-16"
+        className="bg-surface py-24 md:py-36 px-6 md:px-16"
       >
         <motion.div
           variants={scrollRevealVariants}
@@ -357,19 +251,20 @@ export function TheReturnPage() {
           className="max-w-prose mx-auto space-y-6"
         >
           <h2 id="return-who-heading" className="font-display text-h1 font-medium text-primary">
-            Who The Return™ Is For
+            Who This Is For
           </h2>
           <p className="font-body text-body text-secondary">
-            The Return™ is for you if:
+            The Return™ is for people who:
           </p>
           <ul className="space-y-3 font-body text-body text-secondary">
             {[
-              "You feel disconnected",
-              "You feel misaligned",
-              "You feel like you've drifted",
-              "You feel the gap between who you are and how you're living",
-              "You feel the quiet ache of identity erosion",
-              "You feel the pull to come home to yourself",
+              "Feel misaligned",
+              "Feel disconnected",
+              "Feel like they've drifted",
+              "Know they're meant for more",
+              "Want to rebuild from identity",
+              "Want clarity, not motivation",
+              "Want structure, not hype",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="text-secondary mt-1 flex-shrink-0">•</span>
@@ -377,16 +272,16 @@ export function TheReturnPage() {
               </li>
             ))}
           </ul>
-          <p className="font-body text-body text-secondary">
-            If you feel this pull, you are ready.
+          <p className="font-body text-body text-secondary pt-2">
+            If you feel the pull to come back to yourself, this is your threshold.
           </p>
         </motion.div>
       </section>
 
-      {/* Promise + CTA */}
+      {/* SECTION 6 --- CTA */}
       <section
-        aria-labelledby="return-promise-heading"
-        className="bg-neutral py-24 md:py-48 px-6 md:px-16"
+        aria-label="Call to Action"
+        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
       >
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div
@@ -396,29 +291,10 @@ export function TheReturnPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto text-center space-y-8"
         >
-          <h2 id="return-promise-heading" className="font-display text-h1 font-medium text-primary">
-            The Return™ Is a Promise
-          </h2>
-          <div className="space-y-3 font-body text-body text-secondary">
-            <p>A promise that you will not walk back into yourself alone.</p>
-            <p>A promise that your identity will be restored.</p>
-            <p>A promise that your clarity will return.</p>
-            <p>A promise that your sovereignty will rise again.</p>
-          </div>
-          <Divider className="max-w-xs mx-auto" gold />
-          <div className="space-y-3 font-body text-body text-secondary">
-            <p>
-              This is the moment you stop drifting.
-              <br />
-              This is the moment you come home.
-            </p>
-          </div>
           <div className="pt-4">
             <ButtonPrimary href="#begin">Begin The Return™</ButtonPrimary>
           </div>
         </motion.div>
-
-        {/* TODO: imagery pending from client — cinematic faceless silhouette walking toward a golden horizon */}
       </section>
     </>
   );

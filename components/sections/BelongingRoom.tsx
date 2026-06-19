@@ -30,19 +30,18 @@ export function BelongingRoom() {
           >
             A place to feel seen before you transform.
           </h2>
-          <div className="space-y-3 max-w-prose mx-auto">
+          <div className="space-y-4 max-w-prose mx-auto">
             <p className="font-body text-body text-secondary">
-              If you want community before commitment,
-              <br />
-              conversation before direction,
-              <br />
-              resonance before action:
-              <br />
-              start here.
+              Some people need community before commitment.<br />
+              Some need conversation before direction.<br />
+              Some need resonance before action.
+            </p>
+            <p className="font-body text-body text-secondary">
+              The Belonging Room is where you begin if you want to be witnessed before you step into identity work.
             </p>
           </div>
           <div className="pt-4">
-            <ButtonGhost href="/programs#belonging-room">
+            <ButtonGhost href="/the-belonging-room">
               Enter The Belonging Room
             </ButtonGhost>
           </div>

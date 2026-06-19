@@ -9,7 +9,7 @@ const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Newsletter", href: "/newsletter" },
   { label: "Contact", href: "/contact" },
-  { label: "About", href: "/about" },
+  { label: "Legal", href: "/legal" },
 ];
 
 const programLinks = [
@@ -72,7 +72,8 @@ export function Footer() {
         <div className="flex flex-col items-center gap-4">
           <Lockup orientation="stacked" scale="footer" showInstitutional={true} />
           <p className="font-body text-label uppercase tracking-[0.16em] text-secondary/50 text-center">
-            All Rights Reserved © {new Date().getFullYear()} The Sovereign Identity Institution
+            © The Sovereign Identity Ecosystem™<br />
+            All Rights Reserved
           </p>
         </div>
       </div>

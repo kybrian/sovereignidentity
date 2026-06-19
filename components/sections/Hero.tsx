@@ -26,7 +26,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center text-center gap-8 max-w-2xl mx-auto">
-        {/* Crest — ceremonial, full size */}
+        {/* Crest: ceremonial, full size */}
         <motion.div
           variants={heroMarkVariants}
           initial={markInitial}
@@ -62,17 +62,29 @@ export function Hero() {
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p
+        <motion.div
           custom={2}
           variants={heroTextVariants}
           initial={markInitial}
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="font-body text-[1.05rem] leading-relaxed text-secondary max-w-prose"
+          className="font-body text-[1.05rem] leading-relaxed text-secondary max-w-prose space-y-4"
         >
-          Come back to who you were always meant to be.
-        </motion.p>
+          <p className="text-primary font-medium">Come back to who you were always meant to be.</p>
+          <p>
+            Most people spend years drifting, pulled by expectations, survival, momentum, and noise.<br />
+            Identity becomes blurred. Direction becomes unclear. Life becomes reactive instead of intentional.
+          </p>
+          <p>
+            The Return™ is the moment you stop drifting and start living from identity again.
+          </p>
+          <p>
+            This is not motivation.<br />
+            This is not mindset work.<br />
+            This is identity work: upstream, structural, sovereign.
+          </p>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
@@ -89,7 +101,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* TODO: imagery pending from client — faceless silhouette before golden threshold */}
+      {/* TODO: imagery pending from client: faceless silhouette before golden threshold */}
     </section>
   );
 }

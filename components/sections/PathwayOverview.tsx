@@ -10,14 +10,14 @@ import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
 import { Divider } from "@/components/ui/Divider";
 
 const stages = [
-  { n: "01", name: "Drift" },
-  { n: "02", name: "Recognition" },
-  { n: "03", name: "Return" },
-  { n: "04", name: "Purpose" },
-  { n: "05", name: "Alignment" },
-  { n: "06", name: "Embodiment" },
-  { n: "07", name: "Legacy" },
-  { n: "08", name: "Sovereignty" },
+  { n: "01", name: "Drift", desc: "Losing connection to identity" },
+  { n: "02", name: "Recognition", desc: "Seeing the drift" },
+  { n: "03", name: "Return", desc: "Coming back to the source" },
+  { n: "04", name: "Purpose", desc: "Remembering direction" },
+  { n: "05", name: "Alignment", desc: "Reordering life around identity" },
+  { n: "06", name: "Embodiment", desc: "Becoming the person you were meant to be" },
+  { n: "07", name: "Legacy", desc: "Building what lasts" },
+  { n: "08", name: "Sovereignty", desc: "Living from identity with clarity and authority" },
 ];
 
 export function PathwayOverview() {
@@ -43,10 +43,13 @@ export function PathwayOverview() {
           </p>
           <h2
             id="pathway-overview-heading"
-            className="font-display text-h1 font-medium text-primary"
+            className="font-display text-h1 font-medium text-primary mb-4"
           >
-            The 8‑Stage Identity Transformation Sequence
+            Identity transformation is not random.
           </h2>
+          <p className="font-body text-body text-secondary max-w-prose mx-auto">
+            It follows a structure: an 8‑stage sequence that mirrors the way humans return to themselves.
+          </p>
         </motion.div>
 
         {/* Vertical pathway */}
@@ -76,15 +79,26 @@ export function PathwayOverview() {
                   {stage.n}
                 </span>
               </div>
-              {/* Stage name */}
-              <span className="font-body text-[1rem] font-medium text-primary/80 tracking-wide uppercase">
-                {stage.name}
-              </span>
+              {/* Stage name & desc */}
+              <div className="flex flex-col">
+                <span className="font-body text-[1rem] font-medium text-primary/80 tracking-wide uppercase">
+                  {stage.name}
+                </span>
+                <span className="font-body text-sm text-secondary">
+                  {stage.desc}
+                </span>
+              </div>
             </motion.li>
           ))}
         </motion.ol>
 
-        <Divider className="mt-16 mb-12" />
+        <Divider className="mt-16 mb-8" />
+
+        <div className="text-center mb-8">
+          <p className="font-body text-body text-secondary">
+            This is the backbone of the entire Sovereign Identity Ecosystem™.
+          </p>
+        </div>
 
         <div className="flex justify-center">
           <ButtonPrimary href="/the-pathway">View the Full Pathway</ButtonPrimary>

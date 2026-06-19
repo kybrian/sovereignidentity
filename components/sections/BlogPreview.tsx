@@ -32,11 +32,14 @@ export function BlogPreview() {
           >
             Clarity without noise.
           </h2>
-          <p className="font-body text-body text-secondary max-w-prose mx-auto">
-            Identity. Purpose. Alignment. Embodiment. Sovereignty.
-            <br />
-            Clean, grounded, practical articles.
-          </p>
+          <div className="space-y-4 max-w-prose mx-auto">
+            <p className="font-body text-body text-secondary">
+              Identity. Purpose. Alignment. Embodiment. Sovereignty.
+            </p>
+            <p className="font-body text-body text-secondary">
+              Each article is designed to help you see your life through the lens of identity: not emotion, not mindset, not circumstance.
+            </p>
+          </div>
           <div className="pt-2">
             <ButtonGhost href="/blog">Read the Blog</ButtonGhost>
           </div>
