@@ -8,6 +8,7 @@ import {
   staggerChildVariants,
 } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
+import { ButtonGhost } from "@/components/ui/ButtonGhost";
 import { Divider } from "@/components/ui/Divider";
 import { Card } from "@/components/ui/Card";
 
@@ -291,8 +292,9 @@ export function TheReturnPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto text-center space-y-8"
         >
-          <div className="pt-4">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <ButtonPrimary href="#begin">Begin The Return™</ButtonPrimary>
+            <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
           </div>
         </motion.div>
       </section>

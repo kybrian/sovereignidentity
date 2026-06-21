@@ -214,8 +214,14 @@ export function ProgramsPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto text-center space-y-8"
         >
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-primary">
+            Need clarity before commitment?
+          </h2>
+          <p className="font-body text-body text-secondary">
+            Understand how these programs fit together to create a complete identity transformation.
+          </p>
           <div className="pt-4">
-            <ButtonPrimary href="/start-here">Explore the Full Ecosystem</ButtonPrimary>
+            <ButtonPrimary href="/the-pathway">Explore The Pathway</ButtonPrimary>
           </div>
         </motion.div>
       </section>

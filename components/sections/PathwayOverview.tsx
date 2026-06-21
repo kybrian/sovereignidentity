@@ -101,7 +101,7 @@ export function PathwayOverview() {
         </div>
 
         <div className="flex justify-center">
-          <ButtonPrimary href="/the-pathway">View the Full Pathway</ButtonPrimary>
+          <ButtonPrimary href="/the-pathway">Explore The Pathway</ButtonPrimary>
         </div>
       </div>
     </section>

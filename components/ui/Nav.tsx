@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Lockup } from "./Lockup";
+import { ButtonPrimary } from "./ButtonPrimary";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -44,6 +45,9 @@ export function Nav() {
               {link.label}
             </Link>
           ))}
+          <ButtonPrimary href="/the-return" className="hidden lg:inline-flex ml-4 px-4 py-2 text-[0.65rem]">
+            Begin The Return™
+          </ButtonPrimary>
         </nav>
 
         {/* Mobile menu toggle */}
@@ -91,6 +95,11 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <div className="pt-2 border-t border-secondary/10">
+              <ButtonPrimary href="/the-return" className="w-full text-center py-3">
+                Begin The Return™
+              </ButtonPrimary>
+            </div>
           </nav>
         </div>
       )}

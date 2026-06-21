@@ -122,7 +122,7 @@ export function FaqPage() {
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
           <div className="pt-4">
-            <ButtonPrimary href="/programs">Explore Programs</ButtonPrimary>
+            <ButtonPrimary href="/the-pathway">Explore The Pathway</ButtonPrimary>
           </div>
         </motion.div>
       </section>

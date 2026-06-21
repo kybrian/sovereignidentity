@@ -97,7 +97,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4 mt-2"
         >
           <ButtonPrimary href="/the-return">Begin The Return™</ButtonPrimary>
-          <ButtonGhost href="/the-pathway">Explore the Pathway</ButtonGhost>
+          <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
         </motion.div>
       </div>
 

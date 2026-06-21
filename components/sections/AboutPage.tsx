@@ -149,7 +149,7 @@ export function AboutPage() {
       <section aria-label="Call to Action" className="bg-surface py-24 md:py-36 px-6 md:px-16">
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
           <div className="pt-4">
-            <ButtonPrimary href="#story">Read the Full Founder Story</ButtonPrimary>
+            <ButtonPrimary href="/the-pathway">Explore The Pathway</ButtonPrimary>
           </div>
         </motion.div>
       </section>

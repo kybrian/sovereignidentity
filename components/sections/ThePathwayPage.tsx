@@ -208,7 +208,7 @@ export function ThePathwayPage() {
           className="max-w-prose mx-auto text-center space-y-8"
         >
           <div className="pt-4">
-            <ButtonPrimary href="#view">View the Full Pathway</ButtonPrimary>
+            <ButtonPrimary href="/the-return">Begin The Return™</ButtonPrimary>
           </div>
         </motion.div>
       </section>

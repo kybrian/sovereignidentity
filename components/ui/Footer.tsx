@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Lockup } from "./Lockup";
 import { Divider } from "./Divider";
+import { ButtonGhost } from "./ButtonGhost";
 
 const navLinks = [
   { label: "The Return™", href: "/the-return" },
@@ -60,6 +61,17 @@ export function Footer() {
   return (
     <footer className="bg-neutral border-t border-secondary/10">
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-32">
+        {/* Soft CTA */}
+        <div className="flex flex-col items-center text-center space-y-6 mb-20 md:mb-28">
+          <h2 className="font-display text-3xl md:text-5xl font-medium text-primary">
+            Join The Sovereignty Digest™
+          </h2>
+          <p className="font-body text-body text-secondary max-w-prose">
+            For those who need belonging and clarity before transformation. Receive structural identity insights directly to your inbox.
+          </p>
+          <ButtonGhost href="/newsletter">Subscribe to the Digest</ButtonGhost>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
           <FooterCol heading="Navigation" links={navLinks} />
           <FooterCol heading="Programs" links={programLinks} />

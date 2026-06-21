@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { heroMarkVariants, scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
+import { ButtonGhost } from "@/components/ui/ButtonGhost";
 import { Divider } from "@/components/ui/Divider";
 import { Card } from "@/components/ui/Card";
 
@@ -167,8 +168,9 @@ export function ThePurposeMethodPage() {
       <section aria-label="Call to Action" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
-          <div className="pt-4">
+          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <ButtonPrimary href="#start">Start The Purpose Method™</ButtonPrimary>
+            <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
           </div>
         </motion.div>
       </section>

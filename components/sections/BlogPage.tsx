@@ -153,8 +153,14 @@ export function BlogPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto text-center space-y-8"
         >
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-primary">
+            Join The Sovereignty Digest™
+          </h2>
+          <p className="font-body text-body text-secondary">
+            For those who need belonging and clarity before transformation. Receive structural identity insights directly to your inbox.
+          </p>
           <div className="pt-4">
-            <ButtonPrimary href="#latest">Read the Latest Articles</ButtonPrimary>
+            <ButtonPrimary href="/newsletter">Join The Sovereignty Digest™</ButtonPrimary>
           </div>
         </motion.div>
       </section>

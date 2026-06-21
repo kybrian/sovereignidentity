@@ -129,7 +129,7 @@ export function IdentityPhilosophyPage() {
         <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
           <div className="pt-4">
-            <ButtonPrimary href="/not-mindset-work">Learn Why Identity Comes First</ButtonPrimary>
+            <ButtonPrimary href="/not-mindset-work">Explore The Pathway</ButtonPrimary>
           </div>
         </motion.div>
       </section>
