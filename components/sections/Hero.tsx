@@ -17,6 +17,19 @@ export function Hero() {
       aria-label="Hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-16 pt-16 pb-10 md:pb-16 bg-neutral overflow-hidden"
     >
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity"
+        src="/hero.mp4"
+      />
+      
+      {/* Video Overlay for readability */}
+      <div className="absolute inset-0 bg-neutral/60" />
+
       {/* Subtle geometric background line */}
       <div
         aria-hidden="true"
@@ -25,7 +38,7 @@ export function Hero() {
         <div className="w-px h-full bg-secondary/8" />
       </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center gap-8 max-w-2xl mx-auto">
+      <div className="relative z-10 flex flex-col items-center text-center gap-8 max-w-4xl mx-auto">
         {/* Crest: ceremonial, full size */}
         <motion.div
           variants={heroMarkVariants}
@@ -56,35 +69,23 @@ export function Hero() {
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="font-display text-4xl md:text-7xl font-medium leading-[1.1] text-primary"
+          className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] text-primary"
         >
-          THE RETURN™
+          Return to the Identity You Were Always Meant to Live From
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.div
+        <motion.p
           custom={2}
           variants={heroTextVariants}
           initial={markInitial}
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="font-body text-[1.05rem] leading-relaxed text-secondary max-w-prose space-y-4"
+          className="font-body text-[1.05rem] md:text-lg leading-relaxed text-secondary max-w-2xl"
         >
-          <p className="text-primary font-medium">Come back to who you were always meant to be.</p>
-          <p>
-            Most people spend years drifting, pulled by expectations, survival, momentum, and noise.<br />
-            Identity becomes blurred. Direction becomes unclear. Life becomes reactive instead of intentional.
-          </p>
-          <p>
-            The Return™ is the moment you stop drifting and start living from identity again.
-          </p>
-          <p>
-            This is not motivation.<br />
-            This is not mindset work.<br />
-            This is identity work: upstream, structural, sovereign.
-          </p>
-        </motion.div>
+          A complete identity transformation system for people who are ready to stop drifting, reclaim clarity, and rebuild their life from the source.
+        </motion.p>
 
         {/* CTAs */}
         <motion.div
@@ -100,8 +101,6 @@ export function Hero() {
           <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
         </motion.div>
       </div>
-
-      {/* TODO: imagery pending from client: faceless silhouette before golden threshold */}
     </section>
   );
 }
