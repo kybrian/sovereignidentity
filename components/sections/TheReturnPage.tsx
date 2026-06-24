@@ -31,7 +31,7 @@ export function TheReturnPage() {
         >
           <h1
             id="return-hero-heading"
-            className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.1] text-primary"
+            className="font-display text-4xl md:text-5xl font-light tracking-wide leading-[1.2] text-tertiary"
           >
             You don't need a new life.<br />
             You need to return to yourself.
