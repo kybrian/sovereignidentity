@@ -1,10 +1,10 @@
 import { Hero } from "@/components/sections/Hero";
-import { IdentityShockwave } from "@/components/sections/IdentityShockwave";
-import { PathwayOverview } from "@/components/sections/PathwayOverview";
-import { ProgramsGrid } from "@/components/sections/ProgramsGrid";
-import { BelongingRoom } from "@/components/sections/BelongingRoom";
-import { BlogPreview } from "@/components/sections/BlogPreview";
-import { FounderPreview } from "@/components/sections/FounderPreview";
+import { IdentityDeclaration } from "@/components/sections/IdentityDeclaration";
+import { TheReturnPreview } from "@/components/sections/TheReturnPreview";
+import { TheTrilogyPreview } from "@/components/sections/TheTrilogyPreview";
+import { TheArchitectPreview } from "@/components/sections/TheArchitectPreview";
+import { TheBelongingRoomPreview } from "@/components/sections/TheBelongingRoomPreview";
+import { CTABlocks } from "@/components/sections/CTABlocks";
 import { JournalPopup } from "@/components/ui/JournalPopup";
 
 export default function HomePage() {
@@ -12,12 +12,12 @@ export default function HomePage() {
     <>
       <JournalPopup />
       <Hero />
-      <IdentityShockwave />
-      <PathwayOverview />
-      <ProgramsGrid />
-      <BelongingRoom />
-      <BlogPreview />
-      <FounderPreview />
+      <IdentityDeclaration />
+      <TheReturnPreview />
+      <TheTrilogyPreview />
+      <TheArchitectPreview />
+      <TheBelongingRoomPreview />
+      <CTABlocks />
     </>
   );
 }

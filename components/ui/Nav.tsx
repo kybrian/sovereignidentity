@@ -10,11 +10,10 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "The Return™", href: "/the-return" },
-  { label: "The Purpose Method™", href: "/the-purpose-method" },
   { label: "The Trilogy™", href: "/the-trilogy" },
-  { label: "Journal", href: "/journal" },
-  { label: "About", href: "/about" },
-  { label: "Join the Community", href: "/the-belonging-room" },
+  { label: "The Belonging Room™", href: "/the-belonging-room" },
+  { label: "The Architect", href: "/about" },
+  { label: "Apply", href: "/the-return" },
 ];
 
 export function Nav() {

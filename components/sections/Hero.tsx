@@ -71,21 +71,27 @@ export function Hero() {
           viewport={{ once: true }}
           className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] text-primary"
         >
-          Return to the Identity You Were Always Meant to Live From
+          You Were Never Built to Perform.
         </motion.h1>
 
         {/* Subheadline */}
-        <motion.p
+        <motion.div
           custom={2}
           variants={heroTextVariants}
           initial={markInitial}
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="font-body text-[1.05rem] md:text-lg leading-relaxed text-secondary max-w-2xl"
+          className="font-body text-[1.05rem] md:text-lg leading-relaxed text-secondary max-w-2xl space-y-4"
         >
-          A complete identity transformation system for people who are ready to stop drifting, reclaim clarity, and rebuild their life from the source.
-        </motion.p>
+          <p>
+            The world handed you a role. You played it well.<br />
+            Now it's time to build something that is actually yours.
+          </p>
+          <p>
+            There is a version of you that was assembled for other people — their comfort, their systems, their expectations. You carried it. You were disciplined enough to carry it well. But discipline in someone else's architecture is still someone else's architecture. This is where that ends.
+          </p>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div
@@ -95,10 +101,10 @@ export function Hero() {
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="flex flex-col sm:flex-row items-center gap-4 mt-2"
+          className="flex flex-col items-center gap-4 mt-2"
         >
-          <ButtonPrimary href="/the-return">Begin The Return™</ButtonPrimary>
-          <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
+          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">Begin Your Return</p>
+          <ButtonGhost href="#learn-more">↓ Learn What Sovereign Identity™ Builds</ButtonGhost>
         </motion.div>
       </div>
     </section>
