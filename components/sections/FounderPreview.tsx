@@ -35,7 +35,7 @@ export function FounderPreview() {
         </svg>
       </div>
 
-      <div className="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-stretch">
+      <div className="relative max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
         {/* Left: text */}
         <motion.div
           variants={scrollRevealVariants}
@@ -51,16 +51,29 @@ export function FounderPreview() {
             id="founder-heading"
             className="font-display text-h2 font-medium"
           >
-            Melvin, Identity Architect &amp; Creator of The Sovereign Identity Ecosystem™
+            Melvin, Sovereign Identity Architect™
           </h2>
           <div className="space-y-4 max-w-prose">
             <p className="font-body text-body text-secondary">
-              I help people return to who they were always meant to be.<br />
-              Through clarity, structure, and sovereignty, I guide individuals back to their original identity: the one beneath drift, noise, and expectation.
+              Melvin is a Sovereign Identity Architect™ who helps high-capacity individuals return to themselves, rebuild their internal architecture, and live from identity instead of performance.
             </p>
             <p className="font-body text-body text-secondary">
-              Identity is not something you create.<br />
-              Identity is something you return to.
+              A former U.S. Navy serviceman, he carries a discipline forged in structure, a presence shaped by adversity, and a clarity earned through reconstruction.
+            </p>
+            <p className="font-body text-body text-secondary">
+              His work is not motivational.<br />
+              It is structural.<br />
+              Through The Return™, The Purpose Method™, The Trilogy™, and the Sovereign Identity Ecosystem™, he guides high-capacity individuals through the deep work of identity, alignment, embodiment, and legacy — without theatrics, emotional chaos, or performative vulnerability.
+            </p>
+            <p className="font-body text-body text-secondary">
+              His philosophy is simple:<br />
+              You do not need a new life.<br />
+              You need to return to yourself.
+            </p>
+            <p className="font-body text-body text-secondary">
+              Melvin builds systems, not slogans.<br />
+              Identity, not inspiration.<br />
+              Sovereignty, not survival.
             </p>
           </div>
           <ButtonGhost href="/about">Read the Full About Page</ButtonGhost>
@@ -72,7 +85,7 @@ export function FounderPreview() {
           initial="hidden"
           whileInView={animate ?? "visible"}
           viewport={{ once: true }}
-          className="relative w-full min-h-[400px] md:min-h-0 rounded-[3px] overflow-hidden border border-secondary/10"
+          className="relative w-full aspect-[4/5] rounded-[3px] overflow-hidden border border-secondary/10"
         >
           <Image
             src="/profile.png"
