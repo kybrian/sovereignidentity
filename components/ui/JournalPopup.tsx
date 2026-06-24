@@ -35,37 +35,37 @@ export function JournalPopup() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[101] w-full max-w-lg p-6 md:p-10 bg-neutral border border-secondary/20 shadow-2xl rounded-sm"
+            className="relative w-full max-w-lg p-8 md:p-12 bg-neutral border border-secondary/20 shadow-2xl rounded-sm"
           >
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 text-secondary/60 hover:text-primary transition-colors"
+              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-surface border border-secondary/20 text-primary hover:text-tertiary hover:border-tertiary transition-colors duration-200 rounded-full"
               aria-label="Close"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
 
             <div className="text-center space-y-6">
-              <div className="space-y-2">
+              <div className="space-y-2 pr-4">
                 <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
                   The Official Publication
                 </p>
-                <h2 className="font-display text-[2rem] leading-tight font-medium text-primary">
+                <h2 className="font-display text-[1.75rem] md:text-[2rem] leading-tight font-medium text-primary">
                   Get The Sovereign Identity Journal™ — Free.
                 </h2>
               </div>
@@ -95,7 +95,7 @@ export function JournalPopup() {
               </form>
             </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );
