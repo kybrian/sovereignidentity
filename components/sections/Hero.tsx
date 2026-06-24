@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { heroMarkVariants, heroTextVariants } from "@/lib/motion";
 import { Lockup } from "@/components/ui/Lockup";
-import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
 import { ButtonGhost } from "@/components/ui/ButtonGhost";
 
 export function Hero() {
