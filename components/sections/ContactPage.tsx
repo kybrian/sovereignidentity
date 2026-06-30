@@ -79,7 +79,7 @@ function ContactForm() {
       </div>
 
       <div className="pt-4 flex justify-center">
-        <ButtonPrimary type="submit">Send Message</ButtonPrimary>
+        <ButtonPrimary href="/contact/success">Send Message</ButtonPrimary>
       </div>
     </form>
   );

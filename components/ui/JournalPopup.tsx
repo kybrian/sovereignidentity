@@ -28,8 +28,8 @@ export function JournalPopup() {
     e.preventDefault();
     // Simulate submission and redirect
     handleClose();
-    // In a real app this would submit to the backend then redirect.
-    window.open("https://facebook.com/groups/sovereign-identity", "_blank");
+    // Redirect to the success page instead of opening Facebook right away
+    window.location.href = "/contact/success";
   };
 
   return (
