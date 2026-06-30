@@ -3,7 +3,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { heroMarkVariants, scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
-import { Divider } from "@/components/ui/Divider";
 
 const faqs = [
   {

@@ -2,14 +2,11 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  heroMarkVariants,
   scrollRevealVariants,
   staggerContainerVariants,
   staggerChildVariants,
 } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
-import { Divider } from "@/components/ui/Divider";
-import { Card } from "@/components/ui/Card";
 import { useState } from "react";
 
 function ContactForm() {
@@ -17,15 +14,12 @@ function ContactForm() {
 
   return (
     <form
-      className="space-y-5"
+      className="space-y-6 max-w-xl mx-auto"
       onSubmit={(e) => e.preventDefault()}
       aria-label="Contact form"
     >
-      <div className="space-y-1.5">
-        <label
-          htmlFor="name"
-          className="block font-body text-label uppercase tracking-[0.16em] text-secondary"
-        >
+      <div className="space-y-2">
+        <label htmlFor="name" className="block font-body text-label uppercase tracking-[0.16em] text-secondary">
           Name
         </label>
         <input
@@ -34,16 +28,12 @@ function ContactForm() {
           name="name"
           required
           autoComplete="name"
-          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary placeholder:text-secondary/40 focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:outline-offset-0 focus-visible:border-tertiary transition-colors duration-150"
-          placeholder="Your name"
+          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:border-tertiary transition-colors duration-150"
         />
       </div>
 
-      <div className="space-y-1.5">
-        <label
-          htmlFor="email"
-          className="block font-body text-label uppercase tracking-[0.16em] text-secondary"
-        >
+      <div className="space-y-2">
+        <label htmlFor="email" className="block font-body text-label uppercase tracking-[0.16em] text-secondary">
           Email
         </label>
         <input
@@ -52,55 +42,44 @@ function ContactForm() {
           name="email"
           required
           autoComplete="email"
-          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary placeholder:text-secondary/40 focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:outline-offset-0 focus-visible:border-tertiary transition-colors duration-150"
-          placeholder="your@email.com"
+          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:border-tertiary transition-colors duration-150"
         />
       </div>
 
-      <div className="space-y-1.5">
-        <label
-          htmlFor="reason"
-          className="block font-body text-label uppercase tracking-[0.16em] text-secondary"
-        >
-          Reason for Contact
+      <div className="space-y-2">
+        <label htmlFor="reason" className="block font-body text-label uppercase tracking-[0.16em] text-secondary">
+          What brought you here?
         </label>
         <select
           id="reason"
           name="reason"
           value={reason}
           onChange={(e) => setReason(e.target.value)}
-          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:outline-offset-0 focus-visible:border-tertiary transition-colors duration-150 appearance-none cursor-pointer"
+          required
+          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:border-tertiary transition-colors duration-150 appearance-none cursor-pointer"
         >
-          <option value="" className="text-secondary/40">Select a reason</option>
-          <option value="programs">Program questions</option>
-          <option value="pathway">Pathway questions</option>
-          <option value="enrollment">Enrollment clarity</option>
-          <option value="identity">Identity work questions</option>
-          <option value="support">Support with next steps</option>
-          <option value="technical">Technical issues</option>
-          <option value="general">General inquiries</option>
+          <option value="" disabled className="text-secondary/40">Select</option>
+          <option value="drift">Identity Drift</option>
+          <option value="reconstruction">Identity Reconstruction</option>
+          <option value="direction">Identity Direction</option>
         </select>
       </div>
 
-      <div className="space-y-1.5">
-        <label
-          htmlFor="message"
-          className="block font-body text-label uppercase tracking-[0.16em] text-secondary"
-        >
+      <div className="space-y-2">
+        <label htmlFor="message" className="block font-body text-label uppercase tracking-[0.16em] text-secondary">
           Message
         </label>
         <textarea
           id="message"
           name="message"
           required
-          rows={6}
-          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary placeholder:text-secondary/40 focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:outline-offset-0 focus-visible:border-tertiary transition-colors duration-150 resize-none"
-          placeholder="Your message"
+          rows={5}
+          className="w-full bg-surface border border-secondary/30 rounded-sm px-4 py-3 font-body text-body text-primary focus-visible:outline focus-visible:outline-1 focus-visible:outline-tertiary focus-visible:border-tertiary transition-colors duration-150 resize-none"
         />
       </div>
 
-      <div className="pt-2">
-        <ButtonPrimary type="submit">Submit Inquiry</ButtonPrimary>
+      <div className="pt-4 flex justify-center">
+        <ButtonPrimary type="submit">Send Message</ButtonPrimary>
       </div>
     </form>
   );
@@ -112,221 +91,175 @@ export function ContactPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section
-        aria-labelledby="contact-hero-heading"
-        className="min-h-[60vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral"
-      >
-        <motion.div
-          variants={heroMarkVariants}
-          initial={reducedMotion ? "visible" : "hidden"}
-          animate="visible"
-          className="space-y-6 max-w-2xl mx-auto"
-        >
-          <p className="font-body text-label uppercase tracking-[0.16em] text-secondary">
-            Contact
-          </p>
-          <h1
-            id="contact-hero-heading"
-            className="font-display text-[clamp(2rem,7vw,4rem)] font-medium leading-[1.1] text-primary"
-          >
-            Contact
-          </h1>
-          <div className="w-10 h-px bg-secondary/20 mx-auto" />
-        </motion.div>
+      {/* SECTION 1 — IDENTITY OPENING */}
+      <section aria-labelledby="opening-heading" className="bg-neutral pt-48 pb-32 px-6 md:px-16 border-b border-secondary/10">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <motion.div variants={scrollRevealVariants} initial="hidden" animate="visible" className="space-y-8">
+            <h1 id="opening-heading" className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-primary">
+              When You Reach Out, You're Not Contacting a Brand.<br />
+              <span className="text-tertiary">You're Entering the House.</span>
+            </h1>
+            <div className="space-y-4 font-body text-body text-secondary">
+              <p>
+                Most contact pages feel transactional — a place to submit a question, a place to request information, a place to "get in touch."
+              </p>
+              <p>This is not that.</p>
+              <p>
+                This page is the doorway into a sovereign space built for identity reconstruction, purpose restoration, and the return to who you were designed to be.
+              </p>
+              <p className="text-primary font-medium">
+                When you reach out, you're not sending a message into the void.<br />
+                You're stepping into the House.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* IMAGE SLOT 01 — DOORWAY */}
+          <motion.div variants={scrollRevealVariants} initial="hidden" animate="visible" className="relative aspect-[16/9] md:aspect-[3/4] w-full">
+            <div className="absolute inset-0 bg-surface border border-secondary/20 flex flex-col justify-center items-center overflow-hidden">
+              <div className="absolute top-0 bottom-0 w-2/3 border-x border-tertiary/10 bg-gradient-to-b from-transparent via-tertiary/5 to-tertiary/20" />
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* SECTION 1 --- CONTACT */}
-      <section
-        aria-label="Contact"
-        className="bg-surface py-24 md:py-36 px-6 md:px-16"
-      >
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 className="font-display text-h1 font-medium text-primary">
-            Identity support, not emotional support.
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>
-              If you have questions about programs, pathways, or identity work, this is the place to reach out.<br />
-              This page exists to give you clarity, direction, and support, without overwhelm, without pressure, and without noise.
-            </p>
-            <p className="pt-2">
-              You're not contacting a motivational coach.<br />
-              You're contacting an identity institution.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* SECTION 2 --- WHAT TO EXPECT */}
-      <section
-        aria-labelledby="expect-heading"
-        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
-      >
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            variants={scrollRevealVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="mb-12 space-y-4"
-          >
-            <h2 id="expect-heading" className="font-display text-h1 font-medium text-primary">
-              What to Expect
+      {/* SECTION 2 — WHY PEOPLE CONTACT THE HOUSE */}
+      <section aria-labelledby="why-heading" className="bg-surface py-24 md:py-32 px-6 md:px-16">
+        <div className="max-w-5xl mx-auto">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="text-center mb-16 space-y-6">
+            <h2 id="why-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              People Reach Out for One of Three Reasons.
             </h2>
-            <p className="font-body text-body text-secondary">
-              When you reach out, you can expect:
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">
+              Every message that enters this House comes from one of three places:
             </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainerVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-          >
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {[
-              { n: "1", title: "Clarity", desc: "Your question will be answered directly and cleanly." },
-              { n: "2", title: "Professionalism", desc: "You will receive a grounded, structured response." },
-              { n: "3", title: "Boundaries", desc: "This is identity work: not therapy, not crisis support, not emotional processing." },
-              { n: "4", title: "Direction", desc: "If you're unsure where to begin, you'll be guided to the right program or pathway." },
-            ].map((item) => (
-              <motion.div key={item.n} variants={staggerChildVariants}>
-                <Card className="h-full p-8 space-y-4">
-                  <div className="flex items-start gap-4">
-                    <span className="font-body text-label text-secondary uppercase tracking-[0.16em]">{item.n}.</span>
-                    <h3 className="font-display text-[1.3rem] font-medium text-primary">{item.title}</h3>
-                  </div>
-                  <p className="font-body text-body text-secondary">{item.desc}</p>
-                </Card>
+              {
+                num: "1",
+                title: "Identity Drift",
+                desc: "Something feels off. Something feels misaligned. Something feels disconnected from who you truly are."
+              },
+              {
+                num: "2",
+                title: "Identity Reconstruction",
+                desc: "You're ready to rebuild. You're ready to return. You're ready to step into the identity your future clients, family, and calling have been waiting for."
+              },
+              {
+                num: "3",
+                title: "Identity Direction",
+                desc: "You know who you are — but you need clarity on where you're going next."
+              }
+            ].map((reason) => (
+              <motion.div key={reason.num} variants={staggerChildVariants} className="space-y-4">
+                <div className="font-display text-2xl text-tertiary border-b border-secondary/20 pb-4">0{reason.num}</div>
+                <h3 className="font-body text-lg font-bold text-primary tracking-wide uppercase">{reason.title}</h3>
+                <p className="font-body text-body text-secondary">{reason.desc}</p>
               </motion.div>
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 3 --- RESPONSE TIME */}
-      <section
-        aria-labelledby="response-heading"
-        className="bg-surface py-24 md:py-36 px-6 md:px-16"
-      >
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 id="response-heading" className="font-display text-h1 font-medium text-primary">
-            Response Time
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p className="font-medium text-primary">
-              24–48 hours<br />
-              Monday–Friday<br />
-              Pacific Time
-            </p>
-            <p className="pt-2">
-              Every message is read.<br />
-              Every message is responded to.<br />
-              Every message is handled with care and clarity.
-            </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* SECTIONS 4 & 5 --- WHAT THIS FORM IS FOR / NOT FOR */}
-      <section
-        aria-labelledby="form-usage-heading"
-        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
-      >
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-          <motion.div
-            variants={scrollRevealVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h2 id="form-usage-heading" className="font-display text-h1 font-medium text-primary">
-              What This Form Is For
-            </h2>
-            <p className="font-body text-body text-secondary">Use this form for:</p>
-            <ul className="space-y-2 font-body text-body text-secondary">
-              {[
-                "Program questions",
-                "Pathway questions",
-                "Enrollment clarity",
-                "Identity work questions",
-                "Support with next steps",
-                "Technical issues",
-                "General inquiries",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-secondary/40 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
-          <motion.div
-            variants={scrollRevealVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            <h2 className="font-display text-h1 font-medium text-primary">
-              What This Form Is Not For
-            </h2>
-            <p className="font-body text-body text-secondary">This form is <span className="font-medium text-primary">not</span> for:</p>
-            <ul className="space-y-2 font-body text-body text-secondary">
-              {[
-                "Emotional venting",
-                "Crisis support",
-                "Therapy requests",
-                "Personal emergencies",
-                "Motivational coaching",
-                "Life advice unrelated to identity work",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="text-secondary/40 flex-shrink-0">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="font-body text-body text-secondary pt-2">
-              This boundary protects both you and the integrity of the work.
+          
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="text-center mt-16">
+            <p className="font-body text-body text-primary font-medium">
+              If you're here, you're in one of these three places.<br />
+              And that means you're ready.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SECTION 6 --- CTA / FORM */}
-      <section
-        aria-label="Contact Form"
-        className="bg-surface py-24 md:py-36 px-6 md:px-16"
-      >
-        <div className="max-w-2xl mx-auto">
-          <motion.div
-            variants={scrollRevealVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-          >
+      {/* SECTION 3 — HOW TO CONTACT THE HOUSE */}
+      <section aria-labelledby="how-heading" className="bg-neutral py-24 md:py-32 px-6 md:px-16 border-y border-secondary/10">
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* IMAGE SLOT 03 — TWO PATHWAYS */}
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="relative aspect-[16/9] w-full order-2 md:order-1">
+             <div className="absolute inset-0 border border-secondary/20 flex flex-col justify-center items-center">
+                <div className="flex gap-8 w-full px-8 h-full py-12">
+                   <div className="flex-1 border-r border-tertiary/20 bg-gradient-to-t from-tertiary/5 to-transparent" />
+                   <div className="flex-1 border-l border-tertiary/20 bg-gradient-to-t from-tertiary/5 to-transparent" />
+                </div>
+             </div>
+          </motion.div>
+
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-8 order-1 md:order-2">
+            <h2 id="how-heading" className="font-display text-4xl md:text-5xl font-medium leading-[1.2] text-tertiary">
+              There Are Two Ways to Reach Out.
+            </h2>
+            <div className="space-y-6 font-body text-body text-secondary">
+              <p>
+                This House is sovereign. It is intentional. It is structured.
+              </p>
+              <p>So there are only two ways to enter:</p>
+              <div className="space-y-4 pt-2">
+                <div className="flex gap-4">
+                   <span className="text-primary font-bold">1.</span>
+                   <div>
+                      <p className="text-primary font-medium">Direct Message</p>
+                      <p>For questions, clarity, or next steps.</p>
+                   </div>
+                </div>
+                <div className="flex gap-4">
+                   <span className="text-primary font-bold">2.</span>
+                   <div>
+                      <p className="text-primary font-medium">Identity Application</p>
+                      <p>For those ready to begin their return.</p>
+                   </div>
+                </div>
+              </div>
+              <p className="pt-2 text-primary font-medium">
+                Both paths lead to the same place — alignment.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — CONTACT FORM */}
+      <section aria-labelledby="form-heading" className="bg-surface py-24 md:py-32 px-6 md:px-16">
+        <div className="max-w-3xl mx-auto">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="text-center space-y-6 mb-16">
+            <h2 id="form-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              Step Into the House.
+            </h2>
+            <div className="space-y-4 max-w-prose mx-auto font-body text-body text-secondary">
+              <p>
+                Fill out the form below. Share what brought you here. Share what you're ready to rebuild. Share what you're stepping into.
+              </p>
+              <p className="text-primary font-medium">
+                This is not a support ticket. This is not a customer service form. This is the first step in your return.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }}>
             <ContactForm />
           </motion.div>
         </div>
+      </section>
+
+      {/* SECTION 5 — FINAL INVITATION */}
+      <section aria-label="Final Invitation" className="bg-neutral py-24 md:py-32 px-6 md:px-16 border-t border-secondary/10">
+        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-3xl mx-auto text-center space-y-10">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-primary">
+            Your Message Is the First Step in Your Return.
+          </h2>
+          <div className="space-y-4 font-body text-body text-secondary max-w-prose mx-auto">
+            <p>
+              When you reach out, you're not asking for help.
+            </p>
+            <p className="text-primary font-medium">
+              You're declaring identity. You're declaring alignment. You're declaring sovereignty.
+            </p>
+            <p>
+              Your return begins with a single message.
+            </p>
+          </div>
+          <div className="pt-6">
+            <ButtonPrimary href="/the-return">Enter the House</ButtonPrimary>
+          </div>
+        </motion.div>
       </section>
     </>
   );
