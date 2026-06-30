@@ -1,214 +1,109 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  heroMarkVariants,
-  scrollRevealVariants,
-  staggerContainerVariants,
-  staggerChildVariants,
-} from "@/lib/motion";
+import { scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
 import { Divider } from "@/components/ui/Divider";
 import { Card } from "@/components/ui/Card";
-
-const stages = [
-  {
-    n: "1",
-    name: "Drift",
-    body: "Losing connection to identity.\nLife becomes reactive.\nDirection becomes unclear.",
-  },
-  {
-    n: "2",
-    name: "Recognition",
-    body: "Seeing the drift.\nNaming the misalignment.\nAcknowledging the gap.",
-  },
-  {
-    n: "3",
-    name: "Return",
-    body: "Coming back to the source.\nReconnecting with identity.\nReclaiming clarity.",
-  },
-  {
-    n: "4",
-    name: "Purpose",
-    body: "Remembering direction.\nUnderstanding mission.\nFeeling internal alignment.",
-  },
-  {
-    n: "5",
-    name: "Alignment",
-    body: "Reordering life around identity.\nRemoving what doesn't belong.\nCreating internal structure.",
-  },
-  {
-    n: "6",
-    name: "Embodiment",
-    body: "Becoming the person you were meant to be.\nIdentity becomes action.\nClarity becomes movement.",
-  },
-  {
-    n: "7",
-    name: "Legacy",
-    body: "Building what lasts.\nCreating from identity.\nLiving with intention.",
-  },
-  {
-    n: "8",
-    name: "Sovereignty",
-    body: "Living from identity with clarity and authority.\nA stable internal world.\nA sovereign life.",
-  },
-];
 
 export function ThePathwayPage() {
   const reducedMotion = useReducedMotion();
   const animate = reducedMotion ? "visible" : undefined;
 
+  const stages = [
+    { num: "01", name: "Drift" },
+    { num: "02", name: "Recognition" },
+    { num: "03", name: "Return" },
+    { num: "04", name: "Purpose" },
+    { num: "05", name: "Alignment" },
+    { num: "06", name: "Embodiment" },
+    { num: "07", name: "Legacy" },
+    { num: "08", name: "Sovereignty" }
+  ];
+
   return (
     <>
-      {/* Hero */}
-      <section
-        aria-labelledby="pathway-hero-heading"
-        className="min-h-[60vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral"
-      >
-        <motion.div
-          variants={heroMarkVariants}
-          initial={reducedMotion ? "visible" : "hidden"}
-          animate="visible"
-          className="space-y-6 max-w-2xl mx-auto"
-        >
-          <p className="font-body text-label uppercase tracking-[0.16em] text-secondary">
-            The Sovereign Identity Pathway™
-          </p>
-          <h1
-            id="pathway-hero-heading"
-            className="font-display text-4xl md:text-6xl font-medium leading-[1.1] text-primary"
-          >
-            THE PATHWAY
-          </h1>
-          <div className="w-10 h-px bg-secondary/20 mx-auto" />
-        </motion.div>
-      </section>
+      {/* SECTION 1 — HERO (THE PATHWAY) */}
+      <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 pb-24 md:pb-32 bg-neutral overflow-hidden border-b border-secondary/10">
+        {/* IMAGE SLOT 01 — PATHWAY: Cinematic geometric pathway */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-20">
+           <div className="w-[80vw] max-w-[800px] h-full flex flex-col relative">
+              <div className="absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-transparent via-tertiary to-transparent -translate-x-1/2" />
+              <div className="w-full flex-1 border-t border-tertiary/10" />
+              <div className="w-full flex-1 border-t border-tertiary/10" />
+              <div className="w-full flex-1 border-t border-tertiary/10" />
+              <div className="w-full flex-1 border-t border-tertiary/20" />
+           </div>
+           <div className="absolute inset-0 bg-gradient-to-t from-neutral via-transparent to-neutral mix-blend-multiply" />
+        </div>
 
-      {/* SECTION 1 --- THE SOVEREIGN IDENTITY PATHWAY™ */}
-      <section
-        aria-label="The Sovereign Identity Pathway"
-        className="bg-surface py-24 md:py-36 px-6 md:px-16"
-      >
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 className="font-display text-h1 font-medium text-primary">
+        <motion.div variants={scrollRevealVariants} initial="hidden" animate="visible" className="relative z-10 space-y-8 max-w-3xl mx-auto">
+          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
+            The 8-Stage Journey of Return.
+          </p>
+          <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.1] text-primary">
             The Sovereign Identity Pathway™
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
+          </h1>
+          <div className="w-16 h-px bg-secondary/20 mx-auto" />
+          <div className="space-y-4 max-w-prose mx-auto font-body text-body text-secondary">
             <p>
-              Identity transformation is not random.<br />
-              It follows a structure: an 8‑stage sequence that mirrors the way humans return to themselves.
+              Identity reconstruction follows a geometric sequence — a sovereign pathway that brings you back to yourself.
             </p>
-            <p>
-              The Sovereign Identity Pathway™ is the backbone of the entire ecosystem.<br />
-              It explains where you are, where you're going, and what comes next.
+            <p className="text-primary font-medium">
+              This is the architecture of your return.
             </p>
-            <p className="pt-2">
-              This is not a motivational framework.<br />
-              This is a structural identity map.
-            </p>
+          </div>
+          <div className="pt-8">
+            <ButtonPrimary href="#stages">Walk the Pathway</ButtonPrimary>
           </div>
         </motion.div>
       </section>
 
-      {/* SECTION 2 --- THE 8 STAGES */}
-      <section
-        aria-labelledby="eight-stages-heading"
-        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
-      >
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            variants={scrollRevealVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="mb-12 md:mb-16 space-y-4"
-          >
-            <h2 id="eight-stages-heading" className="font-display text-h1 font-medium text-primary">
-              The 8 Stages
-            </h2>
+      {/* SECTION 2 — THE 8 STAGES */}
+      <section id="stages" className="bg-surface py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
+        <div className="max-w-6xl mx-auto">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="text-center mb-16 space-y-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-tertiary">The Pathway of Return</h2>
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">The Sovereign Identity Pathway™ contains eight stages:</p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainerVariants}
-            initial="hidden"
-            whileInView={animate ?? "visible"}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4"
-          >
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16">
             {stages.map((stage) => (
-              <motion.div key={stage.n} variants={staggerChildVariants}>
-                <Card className="h-full p-8 space-y-4">
-                  <div className="flex items-start gap-4">
-                    <span className="font-body text-label text-secondary uppercase tracking-[0.16em]">
-                      {stage.n}.
-                    </span>
-                    <h3 className="font-display text-[1.3rem] font-medium text-primary">
-                      {stage.name}
-                    </h3>
-                  </div>
-                  <div className="font-body text-body text-secondary space-y-1">
-                    {stage.body.split("\n").map((line, i) => (
-                      <p key={i}>{line}</p>
-                    ))}
-                  </div>
+              <motion.div key={stage.num} variants={staggerChildVariants}>
+                <Card className="h-full flex flex-col items-center justify-center p-8 space-y-4 text-center">
+                  <div className="font-body text-label uppercase tracking-[0.16em] text-secondary">Stage {stage.num}</div>
+                  <h3 className="font-display text-2xl md:text-3xl font-medium text-primary">{stage.name}</h3>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
+
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="text-center">
+            <p className="font-body text-body text-primary font-medium uppercase tracking-[0.16em]">Identity becomes architecture.</p>
+          </motion.div>
         </div>
       </section>
 
-      {/* SECTION 3 --- THE PATHWAY IS A LOOP, NOT A LINE */}
-      <section
-        aria-labelledby="pathway-loop-heading"
-        className="bg-surface py-24 md:py-36 px-6 md:px-16"
-      >
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto space-y-6"
-        >
-          <h2 id="pathway-loop-heading" className="font-display text-h1 font-medium text-primary">
-            The Pathway Is a Loop, Not a Line
-          </h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>
-              Identity deepens over time.<br />
-              You revisit stages as you grow.<br />
-              You return to identity again and again, each time with more clarity, more structure, and more sovereignty.
-            </p>
-            <p className="pt-2">
-              This is not a one‑time transformation.<br />
-              This is a lifelong identity practice.
-            </p>
-          </div>
-        </motion.div>
+      {/* SECTION 3 — WHY THIS MATTERS */}
+      <section className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-y border-secondary/10">
+        <Divider className="mb-24 max-w-4xl mx-auto" />
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-16 space-y-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-tertiary">Identity Requires Structure</h2>
+            <div className="font-body text-body text-secondary max-w-prose mx-auto space-y-4">
+              <p>Identity reconstruction is not random. It is geometric. It is sovereign. It is intentional.</p>
+              <p className="text-primary font-medium uppercase tracking-[0.16em]">This pathway is the map.</p>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
-      {/* SECTION 4 --- CTA */}
-      <section
-        aria-label="Call to Action"
-        className="bg-neutral py-24 md:py-36 px-6 md:px-16"
-      >
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <motion.div
-          variants={scrollRevealVariants}
-          initial="hidden"
-          whileInView={animate ?? "visible"}
-          viewport={{ once: true }}
-          className="max-w-prose mx-auto text-center space-y-8"
-        >
+      {/* SECTION 4 — CTA */}
+      <section className="bg-surface py-24 md:py-36 px-6 md:px-16">
+        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-10">
+          <h2 className="font-display text-5xl md:text-7xl font-medium leading-[1.1] text-primary">Walk the Pathway</h2>
           <div className="pt-4">
-            <ButtonPrimary href="/the-return">Begin The Return™</ButtonPrimary>
+            <ButtonPrimary href="/the-return">Enter the House</ButtonPrimary>
           </div>
         </motion.div>
       </section>

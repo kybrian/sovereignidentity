@@ -1,9 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { heroMarkVariants, scrollRevealVariants } from "@/lib/motion";
+import { scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
-import { ButtonGhost } from "@/components/ui/ButtonGhost";
 import { Divider } from "@/components/ui/Divider";
 
 export function TheCirclePage() {
@@ -12,88 +11,86 @@ export function TheCirclePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section aria-labelledby="circle-hero-heading" className="min-h-[60vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral">
-        <motion.div variants={heroMarkVariants} initial={reducedMotion ? "visible" : "hidden"} animate="visible" className="space-y-6 max-w-2xl mx-auto">
-          <p className="font-body text-label uppercase tracking-[0.16em] text-secondary">Program</p>
-          <h1 id="circle-hero-heading" className="font-display text-4xl md:text-6xl font-medium leading-[1.1] text-primary">
+      {/* SECTION 1 — HERO (THE COUNCIL) */}
+      <section className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 pb-24 md:pb-32 bg-neutral overflow-hidden border-b border-secondary/10">
+        {/* IMAGE SLOT 01 — CIRCLE: Cinematic geometric circle of light */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30">
+          <div className="w-64 h-64 md:w-96 md:h-96 rounded-full border-2 border-tertiary/20 shadow-[0_0_80px_rgba(201,161,90,0.15)] bg-gradient-to-tr from-transparent via-tertiary/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral via-transparent to-neutral mix-blend-multiply" />
+        </div>
+
+        <motion.div variants={scrollRevealVariants} initial="hidden" animate="visible" className="relative z-10 space-y-8 max-w-3xl mx-auto">
+          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
+            Identity Governance Begins Here.
+          </p>
+          <h1 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.1] text-primary">
             The Sovereign Identity Circle™
           </h1>
-          <div className="w-10 h-px bg-secondary/20 mx-auto" />
-        </motion.div>
-      </section>
-
-      {/* SECTION 1 --- CONTINUATION */}
-      <section aria-label="Continuation" className="bg-surface py-24 md:py-36 px-6 md:px-16">
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 className="font-display text-h1 font-medium text-primary">Continuation</h2>
-          <div className="space-y-4 font-body text-body text-secondary">
+          <div className="w-16 h-px bg-secondary/20 mx-auto" />
+          <div className="space-y-4 max-w-prose mx-auto font-body text-body text-secondary">
             <p>
-              Identity is not a moment.<br />
-              Identity is a practice.
+              Identity reconstruction is the beginning. Identity governance is the continuation.
             </p>
-            <p>
-              The Sovereign Identity Circle™ is where identity continues to evolve, long after the initial transformation.
+            <p className="text-primary font-medium">
+              The Sovereign Identity Circle™ is the long-term identity container for those who refuse to drift again.
             </p>
-            <p>
-              This is where clarity deepens.<br />
-              Where embodiment strengthens.<br />
-              Where sovereignty becomes natural.
-            </p>
+          </div>
+          <div className="pt-8">
+            <ButtonPrimary href="/the-circle">Enter the Circle</ButtonPrimary>
           </div>
         </motion.div>
       </section>
 
-      {/* SECTION 2 --- WHAT YOU EXPERIENCE */}
-      <section aria-labelledby="experience-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="experience-heading" className="font-display text-h1 font-medium text-primary">What You Experience</h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>Inside The Circle™, you experience:</p>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Identity refinement</li>
-              <li>Embodied sovereignty</li>
-              <li>Legacy expansion</li>
-              <li>Long-term clarity</li>
-              <li>A grounded internal world</li>
-              <li>A stable identity practice</li>
-            </ul>
-            <p className="pt-2">This is the continuation of your identity journey.</p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* SECTION 3 --- WHO THIS IS FOR */}
-      <section aria-labelledby="who-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16">
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="who-heading" className="font-display text-h1 font-medium text-primary">Who This Is For</h2>
-          <p className="font-body text-body text-secondary">The Circle™ is for people who:</p>
-          <ul className="space-y-3 font-body text-body text-secondary">
-            {[
-              "Completed The Trilogy™",
-              "Want continued evolution",
-              "Want identity support",
-              "Want sovereign community",
-              "Want long-term clarity",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="text-secondary mt-1 flex-shrink-0">•</span>
-                <span>{item}</span>
-              </li>
+      {/* SECTION 2 — WHAT THE CIRCLE DOES */}
+      <section className="bg-surface py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-16 space-y-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-tertiary">Identity → Governance</h2>
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">
+              The Circle builds:
+            </p>
+          </motion.div>
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="flex flex-col items-center gap-6 font-display text-2xl md:text-3xl text-primary font-medium mb-16">
+            {["Identity maintenance", "Sovereignty", "Leadership", "Stability", "Long-term alignment"].map((item, idx) => (
+              <motion.div key={idx} variants={staggerChildVariants}>
+                <p>{item}</p>
+              </motion.div>
             ))}
-          </ul>
-          <p className="font-body text-body text-secondary pt-2">If you want to live from identity every day, this is your continuation.</p>
-        </motion.div>
+          </motion.div>
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }}>
+            <p className="font-body text-body text-primary font-medium uppercase tracking-[0.16em]">Identity becomes posture.</p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* SECTION 4 --- CTA */}
-      <section aria-label="Call to Action" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonPrimary href="#join">Join The Circle™</ButtonPrimary>
-            <ButtonGhost href="/the-pathway">Explore The Pathway</ButtonGhost>
+      {/* SECTION 3 — WHO THIS IS FOR */}
+      <section className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-y border-secondary/10">
+        <Divider className="mb-24 max-w-4xl mx-auto" />
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-16 space-y-6">
+            <h2 className="font-display text-4xl md:text-5xl font-medium text-tertiary">For Those Who Want Stability</h2>
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">This room is for those who:</p>
+          </motion.div>
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="flex flex-wrap justify-center gap-x-8 gap-y-4 font-display text-xl md:text-2xl text-primary font-medium mb-16">
+            {["Rebuilt identity", "Found purpose", "Need governance", "Need accountability", "Need sovereign living"].map((item, idx) => (
+              <motion.div key={idx} variants={staggerChildVariants} className="flex items-center gap-8">
+                <span>{item}</span>
+                {idx < 4 && <span className="text-tertiary/40">•</span>}
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }}>
+            <p className="font-body text-body text-primary font-medium uppercase tracking-[0.16em]">Identity becomes governed.</p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — CTA */}
+      <section className="bg-surface py-24 md:py-36 px-6 md:px-16">
+        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-10">
+          <h2 className="font-display text-5xl md:text-7xl font-medium leading-[1.1] text-primary">Enter the Circle</h2>
+          <div className="pt-4">
+            <ButtonPrimary href="/the-return">Begin Your Return</ButtonPrimary>
           </div>
         </motion.div>
       </section>
