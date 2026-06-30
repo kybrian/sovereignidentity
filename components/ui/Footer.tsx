@@ -8,6 +8,7 @@ const footerLinks = [
   { label: "The Belonging Room™", href: "/the-belonging-room" },
   { label: "The Architect", href: "/about" },
   { label: "Apply", href: "/the-return" },
+  { label: "Sitemap", href: "/sitemap" },
 ];
 
 function FooterCol({
