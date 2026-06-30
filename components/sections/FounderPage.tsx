@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { scrollRevealVariants } from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
