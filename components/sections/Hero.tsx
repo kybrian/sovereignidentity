@@ -70,7 +70,7 @@ export function Hero() {
           viewport={{ once: true }}
           className="font-display text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] text-primary"
         >
-          You Were Never Built to Perform.
+          You Don't Need a New Life. You Need Your Identity Back.
         </motion.h1>
 
         {/* Subheadline */}
@@ -81,15 +81,31 @@ export function Hero() {
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="font-body text-[1.05rem] md:text-lg leading-relaxed text-secondary max-w-2xl space-y-4"
+          className="font-body text-[1.05rem] md:text-lg leading-relaxed text-secondary max-w-2xl space-y-8"
         >
-          <p>
-            The world handed you a role. You played it well.<br />
-            Now it's time to build something that is actually yours.
+          <p className="text-xl text-primary/90 font-medium">
+            A sovereign space for those who've outgrown the world's version of them.
           </p>
-          <p>
-            There is a version of you that was assembled for other people — their comfort, their systems, their expectations. You carried it. You were disciplined enough to carry it well. But discipline in someone else's architecture is still someone else's architecture. This is where that ends.
-          </p>
+          <div className="space-y-8">
+            <p>
+              There comes a moment when the noise becomes too loud, the expectations too heavy, and the roles you've been performing no longer fit the shape of your soul.
+            </p>
+            <p>
+              You've carried the weight. You've played the roles. You've survived the seasons. You've done everything the world asked of you — and somewhere along the way, you drifted from the person you were designed to be.
+            </p>
+            <p className="text-primary/90 font-medium">
+              This is where you return.
+            </p>
+            <p>
+              Not to a version shaped by culture, trauma, or expectation — but to the identity that was yours before the world ever touched you.
+            </p>
+            <p>
+              This is not motivation. This is not hype. This is not performance.
+            </p>
+            <p className="text-tertiary uppercase tracking-[0.16em] text-sm font-bold">
+              This is identity reclamation.
+            </p>
+          </div>
         </motion.div>
 
         {/* CTAs */}
@@ -100,10 +116,9 @@ export function Hero() {
           animate={markAnimate ?? "visible"}
           whileInView={reducedMotion ? undefined : "visible"}
           viewport={{ once: true }}
-          className="flex flex-col items-center gap-4 mt-2"
+          className="flex flex-col items-center gap-4 mt-8"
         >
-          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">Begin Your Return</p>
-          <ButtonGhost href="#learn-more">↓ Learn What Sovereign Identity™ Builds</ButtonGhost>
+          <ButtonGhost href="/the-return">Begin Your Return</ButtonGhost>
         </motion.div>
       </div>
     </section>

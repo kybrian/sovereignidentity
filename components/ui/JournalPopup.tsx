@@ -48,11 +48,14 @@ export function JournalPopup() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className="relative w-full max-w-lg p-8 md:p-12 bg-neutral border border-secondary/20 shadow-2xl rounded-sm"
+            className="relative w-full max-w-lg p-8 md:p-12 bg-neutral border-2 border-tertiary shadow-2xl rounded-sm overflow-hidden"
           >
+            {/* Cinematic Gradient Background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-neutral via-neutral to-tertiary/10 pointer-events-none" />
+
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-surface border border-secondary/20 text-primary hover:text-tertiary hover:border-tertiary transition-colors duration-200 rounded-full"
+              className="absolute top-4 right-4 flex items-center justify-center w-10 h-10 bg-surface border border-tertiary/30 text-primary hover:text-tertiary hover:border-tertiary transition-colors duration-200 rounded-full z-10"
               aria-label="Close"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -60,37 +63,27 @@ export function JournalPopup() {
               </svg>
             </button>
 
-            <div className="text-center space-y-6">
+            <div className="relative z-10 text-center space-y-6">
               <div className="space-y-2 pr-4">
                 <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
-                  The Official Publication
+                  The Sovereign Identity Journal™
                 </p>
                 <h2 className="font-display text-[1.75rem] md:text-[2rem] leading-tight font-medium text-primary">
-                  Get The Sovereign Identity Journal™ — Free.
+                  The Official Publication of The House
                 </h2>
               </div>
-              
-              <p className="font-body text-body text-secondary max-w-sm mx-auto">
-                A publication for high-capacity individuals returning to themselves.
-              </p>
 
               <form onSubmit={handleSubmit} className="space-y-4 pt-4 text-left">
                 <div className="space-y-4">
                   <input 
-                    type="text" 
-                    required 
-                    placeholder="Your Name" 
-                    className="w-full px-4 py-3 bg-surface border border-secondary/20 text-primary placeholder:text-secondary/40 focus:outline-none focus:border-tertiary rounded-sm font-body"
-                  />
-                  <input 
                     type="email" 
                     required 
-                    placeholder="Your Email" 
-                    className="w-full px-4 py-3 bg-surface border border-secondary/20 text-primary placeholder:text-secondary/40 focus:outline-none focus:border-tertiary rounded-sm font-body"
+                    placeholder="Enter Your Email" 
+                    className="w-full px-4 py-3 bg-surface border border-tertiary/30 text-primary placeholder:text-secondary/40 focus:outline-none focus:border-tertiary rounded-sm font-body"
                   />
                 </div>
                 <ButtonPrimary type="submit" className="w-full justify-center">
-                  Subscribe & Enter Community
+                  Get the Journal
                 </ButtonPrimary>
               </form>
             </div>

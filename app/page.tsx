@@ -1,10 +1,12 @@
 import { Hero } from "@/components/sections/Hero";
-import { IdentityDeclaration } from "@/components/sections/IdentityDeclaration";
-import { TheReturnPreview } from "@/components/sections/TheReturnPreview";
-import { TheTrilogyPreview } from "@/components/sections/TheTrilogyPreview";
-import { TheArchitectPreview } from "@/components/sections/TheArchitectPreview";
-import { TheBelongingRoomPreview } from "@/components/sections/TheBelongingRoomPreview";
-import { CTABlocks } from "@/components/sections/CTABlocks";
+import { IdentityLens } from "@/components/sections/IdentityLens";
+import { ThePathway } from "@/components/sections/ThePathway";
+import { TheHouse } from "@/components/sections/TheHouse";
+import { TheFourRooms } from "@/components/sections/TheFourRooms";
+import { BelongingRoom } from "@/components/sections/BelongingRoom";
+import { TheFounder } from "@/components/sections/TheFounder";
+import { JournalPreview } from "@/components/sections/JournalPreview";
+import { FinalCTA } from "@/components/sections/FinalCTA";
 import { JournalPopup } from "@/components/ui/JournalPopup";
 
 export default function HomePage() {
@@ -12,12 +14,14 @@ export default function HomePage() {
     <>
       <JournalPopup />
       <Hero />
-      <IdentityDeclaration />
-      <TheReturnPreview />
-      <TheTrilogyPreview />
-      <TheArchitectPreview />
-      <TheBelongingRoomPreview />
-      <CTABlocks />
+      <IdentityLens />
+      <ThePathway />
+      <TheHouse />
+      <TheFourRooms />
+      <BelongingRoom />
+      <TheFounder />
+      <JournalPreview />
+      <FinalCTA />
     </>
   );
 }

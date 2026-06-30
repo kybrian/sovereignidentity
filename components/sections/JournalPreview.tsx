@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { scrollRevealVariants } from "@/lib/motion";
 import { ButtonGhost } from "@/components/ui/ButtonGhost";
 
-export function BelongingRoom() {
+export function JournalPreview() {
   const reducedMotion = useReducedMotion();
   const animate = reducedMotion ? "visible" : undefined;
 
@@ -19,20 +19,20 @@ export function BelongingRoom() {
           className="space-y-8"
         >
           <h2 className="font-display text-4xl md:text-5xl font-medium leading-[1.2] text-tertiary">
-            A Place to Feel Seen Before You Transform
+            The Sovereign Identity Journal™
           </h2>
           
           <div className="space-y-8 max-w-prose mx-auto font-body text-body text-secondary">
             <p>
-              Identity reconstruction begins with belonging — not performance.
+              A cinematic, masculine, geometric identity briefing — delivered weekly.
             </p>
-            <p>
-              This room is where you breathe again. Where you are seen again. Where you remember again.
+            <p className="text-primary font-medium tracking-wide">
+              Not a blog. Not a newsletter. A sovereign publication.
             </p>
           </div>
 
           <div className="pt-8">
-            <ButtonGhost href="/belonging">Enter the Belonging Room</ButtonGhost>
+            <ButtonGhost href="/journal">Read the Journal</ButtonGhost>
           </div>
         </motion.div>
       </div>

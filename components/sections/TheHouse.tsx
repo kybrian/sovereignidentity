@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { scrollRevealVariants } from "@/lib/motion";
 import { ButtonGhost } from "@/components/ui/ButtonGhost";
 
-export function BelongingRoom() {
+export function TheHouse() {
   const reducedMotion = useReducedMotion();
   const animate = reducedMotion ? "visible" : undefined;
 
@@ -19,20 +19,26 @@ export function BelongingRoom() {
           className="space-y-8"
         >
           <h2 className="font-display text-4xl md:text-5xl font-medium leading-[1.2] text-tertiary">
-            A Place to Feel Seen Before You Transform
+            A House Built for Your Return
           </h2>
           
           <div className="space-y-8 max-w-prose mx-auto font-body text-body text-secondary">
             <p>
-              Identity reconstruction begins with belonging — not performance.
+              This is not a program. This is not a course. This is not a motivational brand.
+            </p>
+            <p className="text-primary font-medium">
+              This is a House — a sovereign structure designed to bring you back to yourself.
             </p>
             <p>
-              This room is where you breathe again. Where you are seen again. Where you remember again.
+              Every room has a purpose. Every page has a function. Every step is intentional.
+            </p>
+            <p className="text-primary font-medium tracking-wide">
+              Identity becomes architecture here.
             </p>
           </div>
 
           <div className="pt-8">
-            <ButtonGhost href="/belonging">Enter the Belonging Room</ButtonGhost>
+            <ButtonGhost href="/about">Enter the House</ButtonGhost>
           </div>
         </motion.div>
       </div>
