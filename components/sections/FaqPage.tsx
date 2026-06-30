@@ -5,65 +5,27 @@ import { heroMarkVariants, scrollRevealVariants, staggerContainerVariants, stagg
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
 import { Divider } from "@/components/ui/Divider";
 
-type FaqItem = { q: string; a: string | string[] };
-
-const sections: Array<{ title: string; items: FaqItem[] }> = [
+const faqs = [
   {
-    title: "Identity Work",
-    items: [
-      {
-        q: "What is identity work?",
-        a: [
-          "Identity work is upstream transformation.",
-          "It changes the source, not the symptoms.",
-          "Identity shapes: Mindset, Emotions, Behavior, Decisions, Direction, Purpose.",
-          "When identity becomes clear, everything downstream stabilizes.",
-        ],
-      },
-      {
-        q: "How is this different from mindset work?",
-        a: [
-          "Mindset is downstream. Identity is upstream.",
-          "Mindset changes thoughts. Identity changes the one who thinks.",
-          "This work is structural, not emotional.",
-        ],
-      },
-    ],
+    q: "What is this House?",
+    a: "A sovereign identity environment built for reconstruction and return."
   },
   {
-    title: "Programs",
-    items: [
-      {
-        q: "Who is The Return™ for?",
-        a: "People who feel misaligned, disconnected, or drifting, and want to rebuild from identity.",
-      },
-      {
-        q: "Who is this NOT for?",
-        a: "People seeking motivation, emotional coaching, or quick fixes.",
-      },
-      {
-        q: "Do I need experience?",
-        a: "No. Identity is your starting point.",
-      },
-    ],
+    q: "Who is this for?",
+    a: "Those who drifted, collapsed, or lost themselves — and are ready to return."
   },
   {
-    title: "Logistics",
-    items: [
-      {
-        q: "How do I know where to begin?",
-        a: "Start with The Return™. It is the threshold of identity work.",
-      },
-      {
-        q: "Can I join programs out of order?",
-        a: "No. The ecosystem is sequential for a reason.",
-      },
-      {
-        q: "Are there refunds?",
-        a: "All sales are final unless otherwise stated.",
-      },
-    ],
+    q: "What makes this different?",
+    a: "Identity is the source. Everything else flows from it."
   },
+  {
+    q: "How do I begin?",
+    a: "Start with The Return™."
+  },
+  {
+    q: "What do I need to know before entering?",
+    a: "Identity requires honesty, alignment, and sovereignty."
+  }
 ];
 
 export function FaqPage() {
@@ -73,56 +35,54 @@ export function FaqPage() {
   return (
     <>
       {/* Hero */}
-      <section aria-labelledby="faq-hero-heading" className="min-h-[50vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral">
-        <motion.div variants={heroMarkVariants} initial={reducedMotion ? "visible" : "hidden"} animate="visible" className="space-y-6 max-w-2xl mx-auto">
-          <p className="font-body text-label uppercase tracking-[0.16em] text-secondary">Support</p>
-          <h1 id="faq-hero-heading" className="font-display text-[clamp(2rem,7vw,4rem)] font-medium leading-[1.1] text-primary">Frequently Asked Questions</h1>
-          <div className="w-10 h-px bg-secondary/20 mx-auto" />
-          <div className="space-y-2 font-body text-body text-secondary max-w-prose mx-auto">
-            <p>
-              This page exists to give you clean, grounded answers to the most common questions about identity work, programs, and the Sovereign Identity Ecosystem™.
-            </p>
-            <p className="pt-2">
-              No fluff.<br />
-              No hype.<br />
-              Just clarity.
-            </p>
+      <section aria-labelledby="faq-hero-heading" className="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral overflow-hidden">
+        {/* Abstract Image Slot Placeholder (Cinematic geometric question mark silhouette vibes) */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none">
+           <div className="text-[30rem] md:text-[40rem] font-display text-tertiary font-light select-none">?</div>
+           <div className="absolute inset-0 bg-gradient-to-t from-neutral via-transparent to-neutral mix-blend-multiply" />
+        </div>
+
+        <motion.div variants={heroMarkVariants} initial={reducedMotion ? "visible" : "hidden"} animate="visible" className="relative z-10 space-y-6 max-w-3xl mx-auto">
+          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
+            Identity deserves clarity.
+          </p>
+          <h1 id="faq-hero-heading" className="font-display text-5xl md:text-7xl font-medium leading-[1.1] text-primary">
+            Frequently Asked Questions
+          </h1>
+          <div className="w-10 h-px bg-secondary/20 mx-auto my-8" />
+          <p className="font-body text-body text-secondary max-w-prose mx-auto">
+            This House is sovereign, structured, and intentional. These answers exist to remove confusion, reinforce identity, and keep your return clean.
+          </p>
+          <div className="pt-8">
+            <ButtonPrimary href="/the-return">Enter the House</ButtonPrimary>
           </div>
         </motion.div>
       </section>
 
-      {/* FAQ sections */}
-      {sections.map((sec, si) => (
-        <section key={sec.title} aria-labelledby={`faq-section-${si}`} className={`py-24 md:py-36 px-6 md:px-16 ${si % 2 === 0 ? "bg-surface" : "bg-neutral"}`}>
-          {si > 0 && <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />}
-          <div className="max-w-4xl mx-auto">
-            <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-10">
-              <h2 id={`faq-section-${si}`} className="font-display text-h2 font-medium text-primary">{sec.title}</h2>
-            </motion.div>
-            <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-0">
-              {sec.items.map((item, i) => (
-                <motion.div key={i} variants={staggerChildVariants} className="py-6 border-b border-secondary/10 last:border-b-0">
-                  <h3 className="font-body font-medium text-primary mb-3">{item.q}</h3>
-                  {Array.isArray(item.a) ? (
-                    <div className="space-y-2 font-body text-body text-secondary">
-                      {item.a.map((line) => (<p key={line}>{line}</p>))}
-                    </div>
-                  ) : (
-                    <p className="font-body text-body text-secondary">{item.a}</p>
-                  )}
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-      ))}
+      {/* FAQ List */}
+      <section className="py-24 md:py-36 px-6 md:px-16 bg-surface border-t border-secondary/10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-16 text-center">
+            <h2 className="font-display text-3xl md:text-5xl font-medium text-tertiary">Your Questions, Answered</h2>
+          </motion.div>
+          
+          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="space-y-0">
+            {faqs.map((item, i) => (
+              <motion.div key={i} variants={staggerChildVariants} className="py-8 border-b border-secondary/10 last:border-b-0">
+                <h3 className="font-display text-2xl text-primary mb-4">{item.q}</h3>
+                <p className="font-body text-body text-secondary">{item.a}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA */}
-      <section aria-label="Call to Action" className="bg-surface py-24 md:py-36 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
+      <section aria-label="Call to Action" className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
         <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
+          <h2 className="font-display text-4xl md:text-6xl font-medium text-primary">Begin Your Return</h2>
           <div className="pt-4">
-            <ButtonPrimary href="/the-pathway">Explore The Pathway</ButtonPrimary>
+            <ButtonPrimary href="/the-return">Enter the House</ButtonPrimary>
           </div>
         </motion.div>
       </section>
