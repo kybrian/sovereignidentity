@@ -1,33 +1,13 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { heroMarkVariants, scrollRevealVariants, staggerContainerVariants, staggerChildVariants } from "@/lib/motion";
+import {
+  heroMarkVariants,
+  scrollRevealVariants,
+  staggerContainerVariants,
+  staggerChildVariants,
+} from "@/lib/motion";
 import { ButtonPrimary } from "@/components/ui/ButtonPrimary";
-import { Divider } from "@/components/ui/Divider";
-import { Card } from "@/components/ui/Card";
-
-const experiences = [
-  {
-    n: "1",
-    title: "Calm",
-    desc: "A space without noise, pressure, or expectation.",
-  },
-  {
-    n: "2",
-    title: "Clarity",
-    desc: "Simple, grounded guidance that helps you understand where you are in your identity journey.",
-  },
-  {
-    n: "3",
-    title: "Connection",
-    desc: "A sense of being witnessed: not judged, not fixed, not pushed.",
-  },
-  {
-    n: "4",
-    title: "Identity Resonance",
-    desc: "A feeling of \"this is where I belong\" before you take your next step.",
-  },
-];
 
 export function TheBelongingRoomPage() {
   const reducedMotion = useReducedMotion();
@@ -35,141 +15,162 @@ export function TheBelongingRoomPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section aria-labelledby="br-hero-heading" className="min-h-[60vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 md:pt-48 pb-24 md:pb-48 bg-neutral">
-        <motion.div variants={heroMarkVariants} initial={reducedMotion ? "visible" : "hidden"} animate="visible" className="space-y-6 max-w-2xl mx-auto">
-          <p className="font-body text-label uppercase tracking-[0.16em] text-secondary">Community</p>
-          <h1 id="br-hero-heading" className="font-display text-4xl md:text-6xl font-medium leading-[1.1] text-primary">
-            The Belonging Room
+      {/* SECTION 1 — HERO (BELONGING STRIKE) */}
+      <section
+        aria-labelledby="belonging-hero-heading"
+        className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 pb-24 md:pb-32 bg-neutral overflow-hidden"
+      >
+        {/* IMAGE SLOT 01 — BELONGING */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-t from-neutral via-tertiary/5 to-neutral" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral via-tertiary/10 to-neutral" />
+          <div className="w-[60%] h-[120%] border-x border-tertiary/10 bg-gradient-to-b from-transparent via-tertiary/10 to-transparent" />
+        </div>
+
+        <motion.div
+          variants={heroMarkVariants}
+          initial={reducedMotion ? "visible" : "hidden"}
+          animate="visible"
+          className="relative z-10 space-y-8 max-w-3xl mx-auto"
+        >
+          <h1
+            id="belonging-hero-heading"
+            className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.1] text-primary"
+          >
+            A Place to Feel Seen<br /> Before You Transform
           </h1>
-          <div className="w-10 h-px bg-secondary/20 mx-auto" />
-        </motion.div>
-      </section>
-
-      {/* SECTION 1 --- WHAT THE BELONGING ROOM IS */}
-      <section aria-label="What It Is" className="bg-surface py-24 md:py-36 px-6 md:px-16">
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 className="font-display text-h1 font-medium text-primary">What The Belonging Room Is</h2>
-          <div className="space-y-4 font-body text-body text-secondary">
+          <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
+            Belonging is the first step in identity reconstruction.
+          </p>
+          <div className="w-16 h-px bg-secondary/20 mx-auto" />
+          
+          <div className="space-y-4 max-w-prose mx-auto font-body text-body text-secondary">
             <p>
-              The Belonging Room is a quiet space inside the Sovereign Identity Ecosystem™, a place designed for people who want to feel seen before they transform.
+              Before identity is rebuilt, before purpose is restored, before direction becomes clear — a man must feel seen.
+            </p>
+            <p className="text-primary font-medium">
+              Belonging is not comfort. Belonging is recognition. Belonging is alignment.
             </p>
             <p>
-              Not everyone is ready to begin identity work immediately.<br />
-              Some people need:
+              This room is where you breathe again.
             </p>
-            <ul className="list-disc list-inside space-y-1">
-              <li>A moment to breathe</li>
-              <li>A place to land</li>
-              <li>A space to be witnessed</li>
-              <li>A sense of resonance</li>
-              <li>A feeling of "I'm not alone in this"</li>
-            </ul>
-            <p className="pt-2">The Belonging Room exists for that purpose.</p>
-            <p>
-              It is the softest entry point into the ecosystem, a place where you can arrive without pressure, without expectation, and without needing to know your next step.
-            </p>
+          </div>
+          
+          <div className="pt-8">
+            <ButtonPrimary href="/the-belonging-room">Enter the Room</ButtonPrimary>
           </div>
         </motion.div>
       </section>
 
-      {/* SECTION 2 --- WHY THIS SPACE EXISTS */}
-      <section aria-labelledby="why-exists-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="why-exists-heading" className="font-display text-h1 font-medium text-primary">Why This Space Exists</h2>
-          <div className="space-y-4 font-body text-body text-secondary">
-            <p>
-              Identity work is upstream.<br />
-              It is structural.<br />
-              It is sovereign.
-            </p>
-            <p>But before someone can step into identity work, they often need:</p>
-            <ul className="list-disc list-inside space-y-1">
-              <li>Safety</li>
-              <li>Clarity</li>
-              <li>Connection</li>
-              <li>Understanding</li>
-              <li>A sense of belonging</li>
-            </ul>
-            <p className="pt-2">
-              Most people have spent years drifting, disconnected from themselves, disconnected from their identity, disconnected from their internal world.
-            </p>
-            <p>The Belonging Room gives you a moment to reconnect.</p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* SECTION 3 --- WHAT YOU EXPERIENCE */}
-      <section aria-labelledby="experience-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16">
+      {/* SECTION 2 — WHY BELONGING MATTERS */}
+      <section aria-labelledby="why-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
         <div className="max-w-4xl mx-auto">
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mb-12 md:mb-16 space-y-4">
-            <h2 id="experience-heading" className="font-display text-h1 font-medium text-primary">What You Experience</h2>
-            <p className="font-body text-body text-secondary">Inside The Belonging Room, you experience:</p>
+          <motion.div
+            variants={scrollRevealVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="text-center mb-16 space-y-6"
+          >
+            <h2 id="why-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              You Cannot Rebuild Alone
+            </h2>
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">
+              Identity reconstruction requires a space where you are not judged, not rushed, not misunderstood.
+            </p>
           </motion.div>
 
-          <motion.div variants={staggerContainerVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {experiences.map((exp) => (
-              <motion.div key={exp.n} variants={staggerChildVariants}>
-                <Card className="h-full p-8 space-y-4">
-                  <div className="flex items-start gap-4">
-                    <span className="font-body text-label text-secondary uppercase tracking-[0.16em]">{exp.n}.</span>
-                    <h3 className="font-display text-[1.3rem] font-medium text-primary">{exp.title}</h3>
-                  </div>
-                  <div className="font-body text-body text-secondary space-y-1">
-                    <p>{exp.desc}</p>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
+          <motion.div
+            variants={staggerContainerVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="space-y-8 max-w-prose mx-auto text-center"
+          >
+            <p className="font-body text-body text-primary font-medium mb-6">Belonging creates:</p>
+            <div className="space-y-4 font-body text-lg text-secondary uppercase tracking-wider">
+              {["Recognition", "Safety", "Grounding", "Identity resonance", "Emotional clarity"].map((item, idx) => (
+                <motion.div key={idx} variants={staggerChildVariants}>
+                  <p>{item}</p>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
-          <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="mt-12 text-center">
-            <p className="font-body text-body text-secondary">
-              This is not a program.<br />
-              This is not a commitment.<br />
-              This is a room: a place to arrive.
+          <motion.div
+            variants={scrollRevealVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <p className="font-body text-body text-primary font-medium">
+              Belonging is the soil where identity grows.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SECTION 4 --- WHO THIS IS FOR */}
-      <section aria-labelledby="who-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16">
-        <Divider className="mb-24 md:mb-32 max-w-4xl mx-auto" />
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto space-y-6">
-          <h2 id="who-heading" className="font-display text-h1 font-medium text-primary">Who This Is For</h2>
-          <p className="font-body text-body text-secondary">The Belonging Room is for people who:</p>
-          <ul className="space-y-3 font-body text-body text-secondary">
-            {[
-              "Feel disconnected",
-              "Feel overwhelmed",
-              "Feel unsure where to begin",
-              "Want community before commitment",
-              "Want conversation before direction",
-              "Want resonance before action",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="text-secondary mt-1 flex-shrink-0">•</span>
-                <span>{item}</span>
-              </li>
+      {/* SECTION 3 — WHAT HAPPENS IN THIS ROOM */}
+      <section aria-labelledby="what-happens-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-y border-secondary/10">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            variants={scrollRevealVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="text-center mb-16 space-y-6"
+          >
+            <h2 id="what-happens-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              The First Step Is Being Seen
+            </h2>
+            <p className="font-body text-body text-secondary max-w-prose mx-auto">
+              Inside this room, you will:
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainerVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="space-y-6 max-w-prose mx-auto font-display text-2xl md:text-3xl text-primary font-medium text-center"
+          >
+            {["Reconnect with yourself", "Reconnect with your story", "Reconnect with your identity", "Reconnect with your direction", "Reconnect with your sovereignty"].map((item, idx) => (
+              <motion.div key={idx} variants={staggerChildVariants}>
+                <p>{item}</p>
+              </motion.div>
             ))}
-          </ul>
-          <p className="font-body text-body text-secondary pt-2">If you want to feel seen before you transform, this is where you start.</p>
-        </motion.div>
+          </motion.div>
+          
+          <motion.div
+            variants={scrollRevealVariants}
+            initial="hidden"
+            whileInView={animate ?? "visible"}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <p className="font-body text-body text-primary font-medium">
+              This is the beginning of your return.
+            </p>
+          </motion.div>
+        </div>
       </section>
 
-      {/* SECTION 5 --- CTA */}
+      {/* SECTION 4 — CTA (IDENTITY COMMAND) */}
       <section aria-label="Call to Action" className="bg-surface py-24 md:py-36 px-6 md:px-16">
-        <motion.div variants={scrollRevealVariants} initial="hidden" whileInView={animate ?? "visible"} viewport={{ once: true }} className="max-w-prose mx-auto text-center space-y-8">
-          <h2 className="font-display text-4xl md:text-5xl font-medium text-primary">
-            Join The Sovereignty Digest™
+        <motion.div
+          variants={scrollRevealVariants}
+          initial="hidden"
+          whileInView={animate ?? "visible"}
+          viewport={{ once: true }}
+          className="max-w-prose mx-auto text-center space-y-8"
+        >
+          <h2 className="font-display text-4xl md:text-6xl font-medium text-primary">
+            Step Into Belonging
           </h2>
-          <p className="font-body text-body text-secondary">
-            For those who need belonging and clarity before transformation. Receive structural identity insights directly to your inbox.
-          </p>
           <div className="pt-4">
-            <ButtonPrimary href="/newsletter">Join The Sovereignty Digest™</ButtonPrimary>
+            <ButtonPrimary href="/the-return">Enter the House</ButtonPrimary>
           </div>
         </motion.div>
       </section>
