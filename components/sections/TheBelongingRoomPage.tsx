@@ -15,12 +15,12 @@ export function TheBelongingRoomPage() {
 
   return (
     <>
-      {/* SECTION 1 — HERO (BELONGING STRIKE) */}
+      {/* SECTION 1 — HERO (BELONGING SYSTEM) */}
       <section
         aria-labelledby="belonging-hero-heading"
         className="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-6 md:px-16 pt-32 pb-24 md:pb-32 bg-neutral overflow-hidden"
       >
-        {/* IMAGE SLOT 01 — BELONGING */}
+        {/* IMAGE SLOT 01 — BELONGING SYSTEM */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none opacity-30">
           <div className="absolute inset-0 bg-gradient-to-t from-neutral via-tertiary/5 to-neutral" />
           <div className="absolute inset-0 bg-gradient-to-b from-neutral via-tertiary/10 to-neutral" />
@@ -37,22 +37,22 @@ export function TheBelongingRoomPage() {
             id="belonging-hero-heading"
             className="font-display text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.1] text-primary"
           >
-            A Place to Feel Seen<br /> Before You Transform
+            The Belonging Room
           </h1>
           <p className="font-body text-label uppercase tracking-[0.16em] text-tertiary">
-            Belonging is the first step in identity reconstruction.
+            Identity requires a place to land before it rises.
           </p>
           <div className="w-16 h-px bg-secondary/20 mx-auto" />
           
           <div className="space-y-4 max-w-prose mx-auto font-body text-body text-secondary">
-            <p>
-              Before identity is rebuilt, before purpose is restored, before direction becomes clear — a man must feel seen.
-            </p>
             <p className="text-primary font-medium">
-              Belonging is not comfort. Belonging is recognition. Belonging is alignment.
+              Belonging is not comfort — it is recognition.
             </p>
             <p>
-              This room is where you breathe again.
+              Before identity is rebuilt, before purpose is restored, before direction becomes clear, a man must feel seen.
+            </p>
+            <p>
+              This room is where identity breathes again.
             </p>
           </div>
           
@@ -62,8 +62,8 @@ export function TheBelongingRoomPage() {
         </motion.div>
       </section>
 
-      {/* SECTION 2 — WHY BELONGING MATTERS */}
-      <section aria-labelledby="why-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
+      {/* SECTION 2 — WHAT THE ROOM PROVIDES */}
+      <section aria-labelledby="what-provides-heading" className="bg-surface py-24 md:py-36 px-6 md:px-16 border-t border-secondary/10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={scrollRevealVariants}
@@ -72,11 +72,11 @@ export function TheBelongingRoomPage() {
             viewport={{ once: true }}
             className="text-center mb-16 space-y-6"
           >
-            <h2 id="why-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
-              You Cannot Rebuild Alone
+            <h2 id="what-provides-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              Recognition → Grounding → Alignment
             </h2>
             <p className="font-body text-body text-secondary max-w-prose mx-auto">
-              Identity reconstruction requires a space where you are not judged, not rushed, not misunderstood.
+              Inside this room, identity begins to stabilize. You receive:
             </p>
           </motion.div>
 
@@ -85,11 +85,10 @@ export function TheBelongingRoomPage() {
             initial="hidden"
             whileInView={animate ?? "visible"}
             viewport={{ once: true }}
-            className="space-y-8 max-w-prose mx-auto text-center"
+            className="space-y-8 max-w-prose mx-auto text-center mb-16"
           >
-            <p className="font-body text-body text-primary font-medium mb-6">Belonging creates:</p>
-            <div className="space-y-4 font-body text-lg text-secondary uppercase tracking-wider">
-              {["Recognition", "Safety", "Grounding", "Identity resonance", "Emotional clarity"].map((item, idx) => (
+            <div className="space-y-4 font-display text-2xl md:text-3xl text-primary font-medium">
+              {["Recognition", "Grounding", "Emotional clarity", "Identity resonance", "Alignment"].map((item, idx) => (
                 <motion.div key={idx} variants={staggerChildVariants}>
                   <p>{item}</p>
                 </motion.div>
@@ -102,17 +101,17 @@ export function TheBelongingRoomPage() {
             initial="hidden"
             whileInView={animate ?? "visible"}
             viewport={{ once: true }}
-            className="text-center mt-16"
+            className="text-center"
           >
-            <p className="font-body text-body text-primary font-medium">
+            <p className="font-body text-body text-primary font-medium uppercase tracking-[0.16em]">
               Belonging is the soil where identity grows.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SECTION 3 — WHAT HAPPENS IN THIS ROOM */}
-      <section aria-labelledby="what-happens-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-y border-secondary/10">
+      {/* SECTION 3 — WHO THIS ROOM IS FOR */}
+      <section aria-labelledby="who-heading" className="bg-neutral py-24 md:py-36 px-6 md:px-16 border-y border-secondary/10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             variants={scrollRevealVariants}
@@ -121,11 +120,11 @@ export function TheBelongingRoomPage() {
             viewport={{ once: true }}
             className="text-center mb-16 space-y-6"
           >
-            <h2 id="what-happens-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
-              The First Step Is Being Seen
+            <h2 id="who-heading" className="font-display text-4xl md:text-5xl font-medium text-tertiary">
+              For Those Who Need Space Before Movement
             </h2>
             <p className="font-body text-body text-secondary max-w-prose mx-auto">
-              Inside this room, you will:
+              This room is for those who:
             </p>
           </motion.div>
 
@@ -136,7 +135,7 @@ export function TheBelongingRoomPage() {
             viewport={{ once: true }}
             className="space-y-6 max-w-prose mx-auto font-display text-2xl md:text-3xl text-primary font-medium text-center"
           >
-            {["Reconnect with yourself", "Reconnect with your story", "Reconnect with your identity", "Reconnect with your direction", "Reconnect with your sovereignty"].map((item, idx) => (
+            {["Feel unseen", "Feel misunderstood", "Feel disconnected", "Feel misaligned", "Feel spiritually dry"].map((item, idx) => (
               <motion.div key={idx} variants={staggerChildVariants}>
                 <p>{item}</p>
               </motion.div>
@@ -150,8 +149,8 @@ export function TheBelongingRoomPage() {
             viewport={{ once: true }}
             className="text-center mt-16"
           >
-            <p className="font-body text-body text-primary font-medium">
-              This is the beginning of your return.
+            <p className="font-body text-body text-primary font-medium uppercase tracking-[0.16em]">
+              Belonging is the first step in your return.
             </p>
           </motion.div>
         </div>
@@ -166,7 +165,7 @@ export function TheBelongingRoomPage() {
           viewport={{ once: true }}
           className="max-w-prose mx-auto text-center space-y-8"
         >
-          <h2 className="font-display text-4xl md:text-6xl font-medium text-primary">
+          <h2 className="font-display text-5xl md:text-7xl font-medium text-primary">
             Step Into Belonging
           </h2>
           <div className="pt-4">
