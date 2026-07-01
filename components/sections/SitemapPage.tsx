@@ -19,7 +19,7 @@ export function SitemapPage() {
         { label: "The Pathway", href: "/the-pathway" },
         { label: "The House", href: "/the-house" },
         { label: "House Map", href: "/house-map" },
-        { label: "The Identity OS", href: "/identity-os" },
+        { label: "The Founder OS", href: "/founder-os" },
       ]
     },
     {
